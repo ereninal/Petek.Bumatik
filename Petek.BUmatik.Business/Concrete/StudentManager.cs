@@ -17,7 +17,7 @@ namespace Petek.BUmatik.Business.Concrete
 
         public List<Student> GetStudents()
         {
-            return _studentDal.GetStudents();
+            return _studentDal.GetAll();
         }
     }
 }

@@ -8,9 +8,4 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Petek.BUmatik.Core\Petek.BUmatik.Core.csproj" />
-    <ProjectReference Include="..\Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.DataAccess", "Petek.BUmatik.DataAccess\Petek.BUmatik.DataAccess.csproj", "{37B14191-264D-46B7-93D1-24CB53263862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.DataAccess", "Petek.BUmatik.DataAccess\Petek.BUmatik.DataAccess.csproj", "{37B14191-264D-46B7-93D1-24CB53263862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Business", "Petek.BUmatik.Business\Petek.BUmatik.Business.csproj", "{A582B6AC-6D65-4C24-BFA5-A87341F75F9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.Business", "Petek.BUmatik.Business\Petek.BUmatik.Business.csproj", "{A582B6AC-6D65-4C24-BFA5-A87341F75F9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Entities", "Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj", "{C434681B-C4DA-436E-94C7-364D0B398D15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.Entities", "Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj", "{C434681B-C4DA-436E-94C7-364D0B398D15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.API", "Petek.BUmatik.API\Petek.BUmatik.API.csproj", "{15BD5C10-D4CE-43AA-9772-D028AC295281}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.API", "Petek.BUmatik.API\Petek.BUmatik.API.csproj", "{15BD5C10-D4CE-43AA-9772-D028AC295281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Core", "Petek.BUmatik.Core\Petek.BUmatik.Core.csproj", "{4DDA1358-3F22-4672-9880-B250A7261ADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Shared", "Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj", "{5CA65941-E348-46A6-91A8-72EDAA27F6F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{15BD5C10-D4CE-43AA-9772-D028AC295281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15BD5C10-D4CE-43AA-9772-D028AC295281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15BD5C10-D4CE-43AA-9772-D028AC295281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDA1358-3F22-4672-9880-B250A7261ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDA1358-3F22-4672-9880-B250A7261ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDA1358-3F22-4672-9880-B250A7261ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDA1358-3F22-4672-9880-B250A7261ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA65941-E348-46A6-91A8-72EDAA27F6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA65941-E348-46A6-91A8-72EDAA27F6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA65941-E348-46A6-91A8-72EDAA27F6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA65941-E348-46A6-91A8-72EDAA27F6F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
