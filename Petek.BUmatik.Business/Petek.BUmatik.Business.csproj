@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Petek.BUmatik.DataAccess\Petek.BUmatik.DataAccess.csproj" />
     <ProjectReference Include="..\Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj" />
+    <ProjectReference Include="..\Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj" />
   </ItemGroup>
 
 </Project>
