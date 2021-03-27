@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Petek.BUmatik.Entities.Concrete;
+using Petek.BUmatik.Shared.Constants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"Server=127.0.0.1;Port=49420;Database=BUmatik;Integrated Security=true;");
+
+            optionsBuilder.UseNpgsql(@"User ID=postgres;Password=1;Server=127.0.0.1;Port=5432;Database=BUmatik;Integrated Security=true;Pooling=true;");
         }
         public DbSet<Student> Students { get; set; }
     }

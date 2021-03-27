@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Petek.BUmatik.Core\Petek.BUmatik.Core.csproj" />
     <ProjectReference Include="..\Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj" />
+    <ProjectReference Include="..\Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Petek.BUmatik.Entities.Concrete
 {
-    public class Transactions:IEntitiy
+    public class Transactions:IEntity
     {
 
     }
