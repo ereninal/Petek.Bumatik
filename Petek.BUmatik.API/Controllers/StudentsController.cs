@@ -15,12 +15,44 @@ namespace Petek.BUmatik.API.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-         [HttpGet]
-        public List<Student> Get()
+        IStudentService _studentService;
+
+        public StudentsController(IStudentService studentService)
         {
-            IStudentService studentService = new StudentManager(new EfStudentDal());
-            var result = studentService.GetAllStudents();
-            return result.Data;
+            _studentService = studentService;
+        }
+
+        [HttpGet("GetStudents")]
+        public IActionResult GetStudents()
+        {
+            var result = _studentService.GetAllStudents();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("AddStudent")]
+        public IActionResult AddStudent(Student student)
+        {
+            var result = _studentService.Add(student);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("GetStudentById")]
+        public IActionResult GetStudentById(int studentId)
+        {
+            var result = _studentService.GetStudentById(studentId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }
