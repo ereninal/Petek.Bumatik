@@ -1,4 +1,6 @@
-﻿using Petek.BUmatik.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Petek.BUmatik.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,11 +17,20 @@ namespace Petek.BUmatik.Entities.Concrete
         public DateTime? BirthDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public int? CreatedUserId { get; set; }
-        public int? ModifieUserId { get; set; }
+        public int? CreatedUserId { get; set; }//N olmalı(1-N) ilişkisi için
+        public int? ModifieUserId { get; set; }//N olmalı(1-N) ilişkisi için
         public bool IsDeleted { get; set; }
-        public int SchoolId { get; set; }
-        public int ParentId { get; set; }
+        public int SchoolId { get; set; }//N olmalı(1-N) ilişkisi için
+        public int ParentId { get; set; } //N olmalı(1-N) ilişkisi için
+        
 
     }
+    //public class StudentEntityConfiguration : IEntityTypeConfiguration<Student>
+    //{
+    //    public void Configure(EntityTypeBuilder<Student> builder)
+    //    {
+    //        builder.
+    //    }
+    //}
+
 }
