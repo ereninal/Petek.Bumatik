@@ -21,6 +21,8 @@ namespace Petek.BUmatik.Entities.Concrete
         public int? ModifieUserId { get; set; }//N olmalı(1-N) ilişkisi için
         public bool IsDeleted { get; set; }
         public int SchoolId { get; set; }//N olmalı(1-N) ilişkisi için
+
+        public virtual School School { get; set; }
         public int ParentId { get; set; } //N olmalı(1-N) ilişkisi için
         
 
