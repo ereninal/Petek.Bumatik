@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Petek.BUmatik.DataAccess\Petek.BUmatik.DataAccess.csproj" />
     <ProjectReference Include="..\Petek.BUmatik.Entities\Petek.BUmatik.Entities.csproj" />
     <ProjectReference Include="..\Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj" />

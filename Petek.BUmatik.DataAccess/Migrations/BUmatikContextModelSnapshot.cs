@@ -29,6 +29,21 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -74,10 +89,13 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("RemainMoney")
+                    b.Property<decimal>("RemainingMoney")
                         .HasColumnType("numeric");
 
                     b.Property<int>("SchoolId")

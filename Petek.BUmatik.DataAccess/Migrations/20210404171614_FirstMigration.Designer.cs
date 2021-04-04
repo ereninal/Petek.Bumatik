@@ -10,8 +10,8 @@ using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 namespace Petek.BUmatik.DataAccess.Migrations
 {
     [DbContext(typeof(BUmatikContext))]
-    [Migration("20210331203150_NewColumn")]
-    partial class NewColumn
+    [Migration("20210404171614_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,42 @@ namespace Petek.BUmatik.DataAccess.Migrations
                 .UseIdentityByDefaultColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.2");
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.School", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<int>("TownId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("School");
+                });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Student", b =>
                 {
@@ -55,13 +91,13 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("RemainMoney")
+                    b.Property<decimal>("RemainingMoney")
                         .HasColumnType("numeric");
 
                     b.Property<int>("SchoolId")
@@ -69,7 +105,25 @@ namespace Petek.BUmatik.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("SchoolId");
+
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Student", b =>
+                {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.School", "School")
+                        .WithMany("Students")
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("School");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.School", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }
