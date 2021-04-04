@@ -25,7 +25,7 @@ namespace Petek.BUmatik.API.Controllers
         [HttpGet("GetStudents")]
         public IActionResult GetStudents()
         {
-            var result = _studentService.GetAllStudents();
+            var result = _studentService.GetStudentSummary();
             if (result.Success)
             {
                 return Ok(result);

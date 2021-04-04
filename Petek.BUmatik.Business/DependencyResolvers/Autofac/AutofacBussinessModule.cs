@@ -3,7 +3,6 @@ using AutoMapper;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.Concrete;
 using Petek.BUmatik.DataAccess.Abstract;
-using Petek.BUmatik.DataAccess.Concrete;
 using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 using Petek.BUmatik.Entities.Concrete;
 using Petek.BUmatik.Shared.DTOs;
@@ -19,8 +18,6 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
         {
             builder.RegisterType<StudentManager>().As<IStudentService>().SingleInstance();
             builder.RegisterType<EfStudentDal>().As<IStudentDal>().SingleInstance();
-            builder.RegisterType<SchoolManager>().As<ISchoolService>().SingleInstance();
-            builder.RegisterType<EfSchoolDal>().As<ISchoolDal>().SingleInstance();
 
             builder.Register(context => new MapperConfiguration(cfg =>
             {

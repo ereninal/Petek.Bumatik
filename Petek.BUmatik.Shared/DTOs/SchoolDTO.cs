@@ -8,5 +8,12 @@ namespace Petek.BUmatik.Shared.DTOs
     {
         public string SchoolName{ get; set; }
 
+        public List<StudentDTO> Students { get; set; }
+
+        public SchoolDTO()
+        {
+            Students = new List<StudentDTO>();
+        }
+
     }
 }

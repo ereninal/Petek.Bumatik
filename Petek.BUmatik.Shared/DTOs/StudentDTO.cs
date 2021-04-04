@@ -10,6 +10,7 @@ namespace Petek.BUmatik.Shared.DTOs
         public decimal RemainingMoney { get; set; }
         public string SchoolName { get; set; }
         public string BandNumber { get; set; }
-        
+
+
     }
 }

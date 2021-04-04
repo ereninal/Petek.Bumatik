@@ -19,6 +19,39 @@ namespace Petek.BUmatik.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Parent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime?>("BirthDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parents");
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.School", b =>
                 {
                     b.Property<int>("Id")
@@ -52,7 +85,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("School");
+                    b.ToTable("Schools");
                 });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Student", b =>
@@ -92,16 +125,18 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Property<int?>("ModifiedUserId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ParentId")
+                    b.Property<int?>("ParentId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("RemainingMoney")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("SchoolId")
+                    b.Property<int?>("SchoolId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
 
                     b.HasIndex("SchoolId");
 
@@ -110,13 +145,22 @@ namespace Petek.BUmatik.DataAccess.Migrations
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Student", b =>
                 {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.Parent", "Parent")
+                        .WithMany("Students")
+                        .HasForeignKey("ParentId");
+
                     b.HasOne("Petek.BUmatik.Entities.Concrete.School", "School")
                         .WithMany("Students")
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SchoolId");
+
+                    b.Navigation("Parent");
 
                     b.Navigation("School");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Parent", b =>
+                {
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.School", b =>

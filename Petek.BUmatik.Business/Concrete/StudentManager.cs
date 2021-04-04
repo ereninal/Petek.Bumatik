@@ -49,6 +49,9 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessDataResult<Student>(_studentDal.Get(m => m.IsDeleted != true && m.Id == studentId), "Öğrenci listelendi.");
         }
 
-       
+        public IDataResult<List<StudentDTO>> GetStudentSummary()
+        {
+            return new SuccessDataResult<List<StudentDTO>>(_studentDal.GetStudentSummary(), "Öğrenciler listelendi.");
+        }
     }
 }
