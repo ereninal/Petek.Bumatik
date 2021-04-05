@@ -10,6 +10,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
     public interface IStudentDal:IEntityRepository<Student>
     {
         List<StudentDTO> GetStudentSummary();
+        List<StudentDTO> GetStudentDTOs();
 
     }
 }

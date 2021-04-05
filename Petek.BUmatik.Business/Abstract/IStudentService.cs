@@ -14,5 +14,6 @@ namespace Petek.BUmatik.Business.Abstract
         IResult Add(Student student);
         IDataResult<List<Student>> GetAllStudentsDetails();
         IDataResult<List<StudentDTO>> GetStudentSummary();
+        IDataResult<List<StudentDTO>> GetStudentDTOs();
     }
 }

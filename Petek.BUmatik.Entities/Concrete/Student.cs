@@ -20,7 +20,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public int SchoolId { get; set; }//N olmalı(1-N) ilişkisi için
 
         public int? ParentId { get; set; } //N olmalı(1-N) ilişkisi için
-        //public virtual School School { get; set; }
+        public virtual School School { get; set; }
         //public virtual Parent Parent{ get; set; }
         
 
