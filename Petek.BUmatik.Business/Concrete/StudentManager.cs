@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.Mapper;
+using Petek.BUmatik.Business.ValidationRules.FluentValidation;
 using Petek.BUmatik.Core.Utilities.Results;
 using Petek.BUmatik.DataAccess.Abstract;
 using Petek.BUmatik.Entities.Concrete;
@@ -24,9 +26,11 @@ namespace Petek.BUmatik.Business.Concrete
 
         public IResult Add(Student student)
         {
-            if (student.FullName.Length < 2)
-                return new ErrorResult(Messages.StudentNameInvalid);
-
+            var context = new ValidationContext<Student>(student);
+            StudentValidation studentValidation = new StudentValidation();
+            var result = studentValidation.Validate(context);
+            if (!result.IsValid)
+                throw new ValidationException(result.Errors);
             _studentDal.Add(student);
             return new SuccessResult(Messages.StudentAdded);
         }
