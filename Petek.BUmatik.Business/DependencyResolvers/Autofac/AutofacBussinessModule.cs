@@ -1,7 +1,10 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using AutoMapper;
+using Castle.DynamicProxy;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.Concrete;
+using Petek.BUmatik.Core.Utilities.Interceptors;
 using Petek.BUmatik.DataAccess.Abstract;
 using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 using Petek.BUmatik.Entities.Concrete;
@@ -34,6 +37,18 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             })
             .As<IMapper>()
             .InstancePerLifetimeScope();
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
+
+
+
+
         }
     }
 }
