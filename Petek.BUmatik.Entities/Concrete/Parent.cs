@@ -10,8 +10,11 @@ namespace Petek.BUmatik.Entities.Concrete
     public class Parent : Base, IEntity
     {
         public string FullName { get; set; }
-        public DateTime? BirthDate { get; set; }
-        //public virtual ICollection<Student> Students { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; }
+
+        public virtual ICollection<Student> Students { get; set; }
 
 
     }
@@ -19,10 +22,11 @@ namespace Petek.BUmatik.Entities.Concrete
     {
         public void Configure(EntityTypeBuilder<Parent> builder)
         {
-            //builder.HasMany(e => e.Students)
-            //    .WithOne(e => e.Parent)
-            //    .HasForeignKey(e => e.Id)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            builder.HasMany(m => m.Students)
+                .WithOne(e => e.Parents)
+                .HasForeignKey(e => e.ParentId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
         }
     }
 }

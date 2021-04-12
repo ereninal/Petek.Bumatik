@@ -17,12 +17,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (BUmatikContext context = new BUmatikContext())
             {
-                var datas = context.Students.Include(s => s.School).Where(m => m.IsDeleted != true).Select(m => new StudentDTO()
+                var datas = context.Students.Include(s => s.Schools).Where(m => m.IsDeleted != true).Select(m => new StudentDTO()
                 {
                     Fullname = m.FullName,
                     BandNumber = m.BandNumber,
                     RemainingMoney = m.RemainingMoney,
-                    SchoolName = m.School.Name
+                    SchoolName = m.Schools.Name
 
                 }).ToList();
                 return datas;

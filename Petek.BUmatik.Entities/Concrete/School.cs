@@ -22,8 +22,9 @@ namespace Petek.BUmatik.Entities.Concrete
         public void Configure(EntityTypeBuilder<School> builder)
         {
             builder.HasMany(m => m.Students)
-                .WithOne(e => e.School)
-                .HasForeignKey(e => e.SchoolId);
+                .WithOne(e => e.Schools)
+                .HasForeignKey(e => e.SchoolId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

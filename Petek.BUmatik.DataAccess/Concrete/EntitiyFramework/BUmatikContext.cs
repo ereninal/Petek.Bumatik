@@ -17,7 +17,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             optionsBuilder.UseNpgsql(PostgreDb.ConnectionStringLocal);
         }
         public DbSet<Student> Students { get; set; }
-        public DbSet<Parent> Parents{ get; set; }
+        public DbSet<Parent> Parents { get; set; }
         public DbSet<School> Schools{ get; set; }
     }
 }

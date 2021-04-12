@@ -18,11 +18,11 @@ namespace Petek.BUmatik.Entities.Concrete
         public DateTime? BirthDate { get; set; }
         public int? ModifieUserId { get; set; }//N olmalı(1-N) ilişkisi için
         public int SchoolId { get; set; }//N olmalı(1-N) ilişkisi için
+        public int ParentId { get; set; } //N olmalı(1-N) ilişkisi için
 
-        public int? ParentId { get; set; } //N olmalı(1-N) ilişkisi için
-        public virtual School School { get; set; }
-        //public virtual Parent Parent{ get; set; }
-        
+
+        public virtual School Schools { get; set; }
+        public virtual Parent Parents { get; set; }
 
     }
     public class StudentEntityConfiguration : IEntityTypeConfiguration<Student>
