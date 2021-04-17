@@ -19,5 +19,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public DbSet<Student> Students { get; set; }
         public DbSet<Parent> Parents { get; set; }
         public DbSet<School> Schools{ get; set; }
+        public DbSet<OperationClaim> OperationClaims{ get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims{ get; set; }
     }
 }

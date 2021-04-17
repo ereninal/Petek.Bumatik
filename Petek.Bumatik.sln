@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.Entities", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.API", "Petek.BUmatik.API\Petek.BUmatik.API.csproj", "{15BD5C10-D4CE-43AA-9772-D028AC295281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Core", "Petek.BUmatik.Core\Petek.BUmatik.Core.csproj", "{4DDA1358-3F22-4672-9880-B250A7261ADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.Core", "Petek.BUmatik.Core\Petek.BUmatik.Core.csproj", "{4DDA1358-3F22-4672-9880-B250A7261ADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petek.BUmatik.Shared", "Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj", "{5CA65941-E348-46A6-91A8-72EDAA27F6F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petek.BUmatik.Shared", "Petek.BUmatik.Shared\Petek.BUmatik.Shared.csproj", "{5CA65941-E348-46A6-91A8-72EDAA27F6F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

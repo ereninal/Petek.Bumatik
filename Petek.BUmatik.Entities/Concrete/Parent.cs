@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Petek.BUmatik.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +14,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public string PasswordSalt { get; set; }
 
         public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<UserOperationClaim> OperationClaims { get; set; }
 
 
     }
@@ -26,7 +26,12 @@ namespace Petek.BUmatik.Entities.Concrete
                 .WithOne(e => e.Parents)
                 .HasForeignKey(e => e.ParentId)
                 .OnDelete(DeleteBehavior.Restrict);
-                
+
+            builder.HasMany(m => m.OperationClaims)
+                .WithOne(e => e.Parents)
+                .HasForeignKey(e => e.ParentId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Petek.BUmatik.Core.Entities
+namespace Petek.BUmatik.Entities.Concrete
 {
     //IEntity implemet eden class bir veritabanı tablosudur. 
     public interface IEntity

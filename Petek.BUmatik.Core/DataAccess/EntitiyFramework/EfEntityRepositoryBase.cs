@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Petek.BUmatik.Core.Entities;
+using Petek.BUmatik.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
