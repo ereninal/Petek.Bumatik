@@ -1,6 +1,8 @@
 ﻿using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Http;
+using Petek.BUmatik.Core.Extensions;
 using Petek.BUmatik.Core.Utilities.Interceptors;
+using Petek.BUmatik.Core.Utilities.IoC;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +13,7 @@ namespace Petek.BUmatik.Business.BusinessAspects.Autofac
     {
         private string[] _roles;
         private IHttpContextAccessor _httpContextAccessor;
+
 
         public SecuredOperation(string roles)
         {
