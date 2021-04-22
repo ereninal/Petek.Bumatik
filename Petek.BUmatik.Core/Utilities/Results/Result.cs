@@ -16,6 +16,10 @@ namespace Petek.BUmatik.Core.Utilities.Results
         {
             Success = success;
         }
+        public Result(string message)
+        {
+            Message = message;
+        }
         public bool Success { get; }
 
         public string Message { get; }

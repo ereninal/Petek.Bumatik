@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Petek.BUmatik.Business.Abstract;
+using Petek.BUmatik.Business.BusinessAspects.Autofac;
 using Petek.BUmatik.Business.Mapper;
 using Petek.BUmatik.Business.ValidationRules.FluentValidation;
 using Petek.BUmatik.Core.Aspects.Autofac.Validation;
@@ -25,7 +26,7 @@ namespace Petek.BUmatik.Business.Concrete
             _studentDal = studentDal;
             _mapper = mapper;
         }
-
+        [SecuredOperation("student.add,admnin")]
         [ValidationAspect(typeof(StudentValidator))]
         public IResult Add(Student student)
         {
