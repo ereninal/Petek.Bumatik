@@ -4,7 +4,9 @@ using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.BusinessAspects.Autofac;
 using Petek.BUmatik.Business.Mapper;
 using Petek.BUmatik.Business.ValidationRules.FluentValidation;
+using Petek.BUmatik.Core.Aspects.Autofac.Caching;
 using Petek.BUmatik.Core.Aspects.Autofac.Validation;
+using Petek.BUmatik.Core.CrossCuttingConcerns.Caching;
 using Petek.BUmatik.Core.CrossCuttingConcerns.Validation;
 using Petek.BUmatik.Core.Utilities.Business;
 using Petek.BUmatik.Core.Utilities.Results;
@@ -58,9 +60,10 @@ namespace Petek.BUmatik.Business.Concrete
         {
             return new SuccessDataResult<Student>(_studentDal.Get(m => m.IsDeleted != true && m.Id == studentId), "Öğrenci listelendi.");
         }
-
+        [CacheAspect]
         public IDataResult<List<StudentDTO>> GetStudentDTOs()
         {
+
             return new SuccessDataResult<List<StudentDTO>>(_studentDal.GetStudentDTOs(), "Öğrenciler listelendi.");
         }
 

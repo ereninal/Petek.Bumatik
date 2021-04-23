@@ -21,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CrossCuttingConcerns\Caching\Elastic\" />
+    <Folder Include="CrossCuttingConcerns\Caching\Redis\" />
     <Folder Include="Entities\" />
   </ItemGroup>
 
