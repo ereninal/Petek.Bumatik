@@ -32,6 +32,7 @@ namespace Petek.BUmatik.Business.Concrete
         }
         [SecuredOperation("Student.Add,Admin")]
         [ValidationAspect(typeof(StudentValidator))]
+        [CacheRemoveAspect("IStudentService.Get")]//herşey interface üzerinden oluyor. Tümü silmek içini tırnak içine Get yazdığımızda tüm get isteklerini siler -Eren
         public IResult Add(Student student)
         {
             IResult result = BusinessRules.Run(CheckIfStudentBandNumberExists(student.BandNumber));
