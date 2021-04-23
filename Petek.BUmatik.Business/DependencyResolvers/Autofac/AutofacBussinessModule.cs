@@ -2,9 +2,11 @@
 using Autofac.Extras.DynamicProxy;
 using AutoMapper;
 using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Http;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.Concrete;
 using Petek.BUmatik.Core.Utilities.Interceptors;
+using Petek.BUmatik.Core.Utilities.Security.JWT;
 using Petek.BUmatik.DataAccess.Abstract;
 using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 using Petek.BUmatik.Entities.Concrete;
@@ -37,6 +39,12 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             })
             .As<IMapper>()
             .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

@@ -10,8 +10,8 @@ using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 namespace Petek.BUmatik.DataAccess.Migrations
 {
     [DbContext(typeof(BUmatikContext))]
-    [Migration("20210417220244_NewTAblesAdded")]
-    partial class NewTAblesAdded
+    [Migration("20210423072033_TablesAdd")]
+    partial class TablesAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
             modelBuilder
                 .UseIdentityByDefaultColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.5");
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.OperationClaim", b =>
                 {
@@ -79,11 +79,11 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Property<int?>("ModifiedUserId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("text");
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("bytea");
 
-                    b.Property<string>("PasswordSalt")
-                        .HasColumnType("text");
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("bytea");
 
                     b.HasKey("Id");
 

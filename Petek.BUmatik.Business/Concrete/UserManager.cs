@@ -28,7 +28,7 @@ namespace Petek.BUmatik.Business.Concrete
 
         public Parent GetByMail(string email)
         {
-            return _userDal.Get(u => u.Email == email);
+            return _userDal.Get(u => u.Email == email && u.IsDeleted == false);
         }
     }
 }

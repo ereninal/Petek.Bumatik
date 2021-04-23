@@ -6,6 +6,7 @@ using Petek.BUmatik.Business.Mapper;
 using Petek.BUmatik.Business.ValidationRules.FluentValidation;
 using Petek.BUmatik.Core.Aspects.Autofac.Validation;
 using Petek.BUmatik.Core.CrossCuttingConcerns.Validation;
+using Petek.BUmatik.Core.Utilities.Business;
 using Petek.BUmatik.Core.Utilities.Results;
 using Petek.BUmatik.DataAccess.Abstract;
 using Petek.BUmatik.Entities.Concrete;
@@ -13,6 +14,7 @@ using Petek.BUmatik.Shared.Constants;
 using Petek.BUmatik.Shared.DTOs;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Petek.BUmatik.Business.Concrete
@@ -26,10 +28,14 @@ namespace Petek.BUmatik.Business.Concrete
             _studentDal = studentDal;
             _mapper = mapper;
         }
-        [SecuredOperation("student.add,admnin")]
+        [SecuredOperation("Student.Add,Admin")]
         [ValidationAspect(typeof(StudentValidator))]
         public IResult Add(Student student)
         {
+            IResult result = BusinessRules.Run(CheckIfStudentBandNumberExists(student.BandNumber));
+
+            if (result != null)
+                return result;
 
             _studentDal.Add(student);
             return new SuccessResult(Messages.StudentAdded);
@@ -61,6 +67,15 @@ namespace Petek.BUmatik.Business.Concrete
         public IDataResult<List<StudentDTO>> GetStudentSummary()
         {
             return new SuccessDataResult<List<StudentDTO>>(_studentDal.GetStudentSummary(), "Öğrenciler listelendi.");
+        }
+        private IResult CheckIfStudentBandNumberExists(string bandNumber)
+        {
+            var result = _studentDal.GetAll(p => p.BandNumber == bandNumber && p.IsDeleted == false).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.StudentBandNumberAlreadyExists);
+            }
+            return new SuccessResult();
         }
     }
 }
