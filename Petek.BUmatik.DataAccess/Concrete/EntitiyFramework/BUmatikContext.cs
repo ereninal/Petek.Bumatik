@@ -63,10 +63,42 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             };
             modelBuilder.Entity<Parent>().HasData(parents);
 
+            var schools = new School[]
+            {
+                new School{Id=1,Name="Selçuk Üniversitesi",CityId=42,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=2,Name="Beykent Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=3,Name="Sabancı Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=4,Name="Koç Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=5,Name="Yıldız Teknik Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=6,Name="İstanbul Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=7,Name="İstanbul Teknik Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=8,Name="Karadeniz Teknik Üniversitesi",CityId=61,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=9,Name="Ege Üniversitesi",CityId=35,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=10,Name="Konya Teknik Üniversitesi",CityId=42,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=11,Name="Kocaeli Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=12,Name="Gebze Teknik Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=13,Name="Fırat Üniversitesi",CityId=67,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=14,Name="Namık Kemal Üniversitesi",CityId=59,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=15,Name="Trakya Üniversitesi",CityId=22,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=16,Name="Ankara Üniversitesi",CityId=1,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=17,Name="Orta Doğu Teknik Üniversitesi",CityId=1,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=18,Name="Bilkent Üniversitesi",CityId=1,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=19,Name="Çanakkale 18 Mart Üniversitesi",CityId=17,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=20,Name="Süleyman Demirel Üniversitesi",CityId=32,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=21,Name="İstanbul Aydın Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=22,Name="Nişantaşı Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=23,Name="Marmara Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=24,Name="Boğaziçi Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=25,Name="Gelişim Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new School{Id=26,Name="Milli Savunma Üniversitesi",CityId=34,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+            };
+
+            modelBuilder.Entity<School>().HasData(schools);
+
             var students = new Student[]
             {
-                new Student{Id=1,FullName="Mira İNAL",BandNumber="11111",CreatedDate=createdDate,IsDeleted=false,ParentId=1,CreatedUserId=1,RemainingMoney=50},
-                new Student{Id=1,FullName="Aras İNAL",BandNumber="22222",CreatedDate=createdDate,IsDeleted=false,ParentId=1,CreatedUserId=1,RemainingMoney=50},
+                new Student{Id=1,FullName="Mira İNAL",BandNumber="11111",CreatedDate=createdDate,IsDeleted=false,ParentId=1,CreatedUserId=1,RemainingMoney=50,SchoolId=1},
+                new Student{Id=2,FullName="Aras İNAL",BandNumber="22222",CreatedDate=createdDate,IsDeleted=false,ParentId=1,CreatedUserId=1,RemainingMoney=50,SchoolId=2},
                 //new Student{Id=1,FullName="Mahmut Kaçak",BandNumber="33333",CreatedDate=createdDate,IsDeleted=false,ParentId=2,CreatedUserId=1,RemainingMoney=50},
                 //new Student{Id=1,FullName="Mesut Toma",BandNumber="44444",CreatedDate=createdDate,IsDeleted=false,ParentId=3,CreatedUserId=1,RemainingMoney=50},
                 //new Student{Id=1,FullName="Ali Kaydırmalı",BandNumber="55555",CreatedDate=createdDate,IsDeleted=false,ParentId=4,CreatedUserId=1,RemainingMoney=50},
