@@ -30,7 +30,7 @@ namespace Petek.BUmatik.Business.Concrete
             _studentDal = studentDal;
             _mapper = mapper;
         }
-        [SecuredOperation("Student.Add,Admin")]
+        [SecuredOperation("Student.Add,Admin,Member")]
         [ValidationAspect(typeof(StudentValidator))]
         [CacheRemoveAspect("IStudentService.Get")]//herşey interface üzerinden oluyor. Tümü silmek içini tırnak içine Get yazdığımızda tüm get isteklerini siler -Eren
         public IResult Add(Student student)
@@ -43,7 +43,7 @@ namespace Petek.BUmatik.Business.Concrete
             _studentDal.Add(student);
             return new SuccessResult(Messages.StudentAdded);
         }
-
+        [SecuredOperation("Member")]
         public IDataResult<List<StudentDTO>> GetAllStudents()
         {
             var data = new SuccessDataResult<List<Student>>(_studentDal.GetAll(m => m.IsDeleted != true), "Öğrenciler listelendi.");
@@ -51,11 +51,13 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessDataResult<List<StudentDTO>>(dataDTO, "Öğrenciler listelendi."); 
 
         }
+        [SecuredOperation("Member")]
 
         public IDataResult<List<Student>> GetAllStudentsDetails()
         {
             return new SuccessDataResult<List<Student>>(_studentDal.GetAll(m => m.IsDeleted != true),"Öğrenciler listelendi.");
         }
+        [SecuredOperation("Member")]
 
         public IDataResult<Student> GetStudentById(int studentId)
         {
@@ -68,6 +70,7 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessDataResult<List<StudentDTO>>(_studentDal.GetStudentDTOs(), "Öğrenciler listelendi.");
         }
 
+        [SecuredOperation("Member")]
         public IDataResult<List<StudentDTO>> GetStudentSummary()
         {
             return new SuccessDataResult<List<StudentDTO>>(_studentDal.GetStudentSummary(), "Öğrenciler listelendi.");

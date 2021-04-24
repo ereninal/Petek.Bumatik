@@ -16,7 +16,6 @@ namespace Petek.BUmatik.API.Controllers
     public class StudentsController : ControllerBase
     {
         IStudentService _studentService;
-
         public StudentsController(IStudentService studentService)
         {
             _studentService = studentService;

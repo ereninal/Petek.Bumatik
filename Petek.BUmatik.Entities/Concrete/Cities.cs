@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Petek.BUmatik.Entities.Concrete
 {
-    public class Countries : Base, IEntity
+    public class Cities: Base, IEntity
     {
+        public string Name { get; set; }
+        public int CountryCode { get; set; }
     }
 }

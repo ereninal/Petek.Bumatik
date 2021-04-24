@@ -10,6 +10,7 @@ namespace Petek.BUmatik.Business.Concrete
 {
     public class SchoolService : ISchoolService
     {
+
         public IResult Add(School school)
         {
             throw new NotImplementedException();

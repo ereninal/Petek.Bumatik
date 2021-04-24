@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Petek.BUmatik.Shared.DTOs;
 
 namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
@@ -21,6 +22,21 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                              select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };
                 return result.ToList();
 
+            }
+        }
+
+        public List<ParentDTO> GetParents()
+        {
+            using (var context = new BUmatikContext())
+            {
+                var datas = context.Parents.Where(m => m.IsDeleted == false).Select(m => new ParentDTO() { 
+                    Email = m.Email,
+                    Fullname = m.FullName,
+                    PasswordHash = m.PasswordHash,
+                    PasswordSalt = m.PasswordSalt
+                }).ToList();
+
+                return datas;
             }
         }
     }
