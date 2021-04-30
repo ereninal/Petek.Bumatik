@@ -13,6 +13,7 @@ namespace Petek.BUmatik.Entities.Concrete
 
         public virtual ICollection<City> Cities { get; set; }
 
+        public virtual ICollection<School> Schools { get; set; }
 
     }
     public class CountryEntityConfiguration : IEntityTypeConfiguration<County>
@@ -21,6 +22,11 @@ namespace Petek.BUmatik.Entities.Concrete
         {
             builder.HasMany(m => m.Cities)
                .WithOne(e => e.Counties)
+               .HasForeignKey(e => e.CountryId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasMany(m => m.Schools)
+               .WithOne(e => e.County)
                .HasForeignKey(e => e.CountryId)
                .OnDelete(DeleteBehavior.Restrict);
         }

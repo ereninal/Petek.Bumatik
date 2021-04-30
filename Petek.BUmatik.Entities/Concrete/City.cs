@@ -13,17 +13,13 @@ namespace Petek.BUmatik.Entities.Concrete
         public virtual  County Counties { get; set; }
         public virtual AdminUser AdminUser { get; set; }
 
-        public virtual ICollection<School> Schools{ get; set; }
 
     }
     public class CityConfiguration : IEntityTypeConfiguration<City>
     {
         public void Configure(EntityTypeBuilder<City> builder)
         {
-            builder.HasMany(m => m.Schools)
-                .WithOne(e => e.City)
-                .HasForeignKey(e => e.CityId)
-                .OnDelete(DeleteBehavior.Restrict);
+           
         }
     }
 }
