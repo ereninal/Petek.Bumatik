@@ -69,5 +69,37 @@ namespace Petek.BUmatik.Business.Concrete
             var accessToken = _tokenHelper.CreateToken(user, claims);
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
+
+        public IDataResult<AdminUser> AdminUserRegister(UserForRegisterDto userForRegisterDto, string password)
+        {
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            var user = new AdminUser
+            {
+                Email = userForRegisterDto.Email,
+                FullName = userForRegisterDto.Fullname,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                IsDeleted = false
+            };
+            _userService.AdminUserAdd(user);
+            return new SuccessDataResult<AdminUser>(user, Messages.UserRegistered);
+        }
+
+        public IDataResult<AdminUser> AdminUserLogin(UserForLoginDto userForLoginDto)
+        {
+            var userToCheck = _userService.AdminUserGetByMail(userForLoginDto.Email);
+            if (userToCheck == null)
+            {
+                return new ErrorDataResult<AdminUser>(Messages.UserNotFound);
+            }
+
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                return new ErrorDataResult<AdminUser>(Messages.PasswordError);
+            }
+
+            return new SuccessDataResult<AdminUser>(userToCheck, Messages.SuccessfulLogin);
+        }
     }
 }

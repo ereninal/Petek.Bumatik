@@ -12,6 +12,8 @@ namespace Petek.BUmatik.Business.Abstract
     {
         IDataResult<Parent> Register(UserForRegisterDto userForRegisterDto, string password);
         IDataResult<Parent> Login(UserForLoginDto userForLoginDto);
+        IDataResult<AdminUser> AdminUserRegister(UserForRegisterDto userForRegisterDto, string password);
+        IDataResult<AdminUser> AdminUserLogin(UserForLoginDto userForLoginDto);
         IResult UserExists(string email);
         IDataResult<AccessToken> CreateAccessToken(Parent user);
     }

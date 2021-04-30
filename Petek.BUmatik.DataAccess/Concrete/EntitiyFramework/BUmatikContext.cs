@@ -19,7 +19,6 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         }
 
         #region Model
-        public DbSet<AdminUser> AdminUsers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Parent> Parents { get; set; }
         public DbSet<School> Schools { get; set; }
@@ -27,6 +26,10 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<County> Counties { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<SendEmailOrSms> SendEmailOrSms{ get; set; }
+        public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<AutomatItem> AutomatItems{ get; set; }
+        public DbSet<StudentMenu> StudentMenus{ get; set; }
 
         #endregion
 
@@ -36,21 +39,22 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash("12345aa", out passwordHash, out passwordSalt);
 
-            #region SeedDateAdminUser
+            #region AdminUser
             var adminUsers = new AdminUser[] {
                 new AdminUser{Id=1,FullName="Eren İnal",Email="eren@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
-                new AdminUser{Id=2,FullName="Eren İnal",Email="pelinsu@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
-                new AdminUser{Id=3,FullName="Eren İnal",Email="kemal@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
-                new AdminUser{Id=4,FullName="Eren İnal",Email="samet@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
+                new AdminUser{Id=2,FullName="Peinsu Baltacı",Email="pelinsu@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
+                new AdminUser{Id=3,FullName="Mehmet Kemal Sarıkaya",Email="kemal@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
+                new AdminUser{Id=4,FullName="Samet Dikmen",Email="samet@petek.com",CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt},
             };
-            modelBuilder.Entity<OperationClaim>().HasData(adminUsers);
+            modelBuilder.Entity<AdminUser>().HasData(adminUsers);
             #endregion
 
-            #region SeedDateAdminUser
+            #region OperationClaim
             var operationClaims = new OperationClaim[]
             {
                 new OperationClaim { Id = 1, Name = "Admin",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
                 new OperationClaim { Id = 2, Name = "Member",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
+                new OperationClaim { Id = 3, Name = "Member.Create",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
                 new OperationClaim { Id = 4, Name = "Student.Add",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
                 new OperationClaim { Id = 5, Name = "Student.GetById",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
                 new OperationClaim { Id = 6, Name = "Student.Delete",CreatedUserId=1, IsDeleted = false, CreatedDate = createdDate },
@@ -210,7 +214,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 new County{Id=80,CountryName="Osmaniye",CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false },
                 new County{Id=81,CountryName="Düzce",CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false },
             };
-            modelBuilder.Entity<Student>().HasData(countries);
+            modelBuilder.Entity<County>().HasData(countries);
             #endregion
 
             #region Cities
@@ -263,8 +267,73 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 new City{Id=48,Name="Beşikdüzü",CountryId=61,CreatedUserId=1,IsDeleted=false},
 
             };
+            modelBuilder.Entity<City>().HasData(cities);
+
             #endregion
 
+            #region AutomatInfos
+            var outomatInfos = new AutomatInfo[] 
+            {
+                new AutomatInfo{Id=1,Number="BUMATIK-1",Brand="Pe-Tek",SchoolId=1,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=2,Number="BUMATIK-2",Brand="Pe-Tek",SchoolId=2,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=3,Number="BUMATIK-3",Brand="Pe-Tek",SchoolId=4,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=4,Number="BUMATIK-4",Brand="Pe-Tek",SchoolId=5,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=5,Number="BUMATIK-5",Brand="Pe-Tek",SchoolId=6,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=6,Number="BUMATIK-6",Brand="Pe-Tek",SchoolId=7,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=7,Number="BUMATIK-7",Brand="Pe-Tek",SchoolId=8,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=8,Number="BUMATIK-8",Brand="Pe-Tek",SchoolId=9,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=9,Number="BUMATIK-9",Brand="Pe-Tek",SchoolId=10,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+                new AutomatInfo{Id=10,Number="BUMATIK-10",Brand="Pe-Tek",SchoolId=11,Count=10,CreatedDate=createdDate,LastRepairDate=createdDate,CreatedUserId=1,IsDeleted=false,StartDate=createdDate},
+            };
+            modelBuilder.Entity<AutomatInfo>().HasData(outomatInfos);
+
+            #endregion
+
+            #region AutomatInfos
+            var outomatItems = new AutomatItem[]
+            {
+                new AutomatItem{Id=1,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Elma"},
+                new AutomatItem{Id=2,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Armut"},
+                new AutomatItem{Id=3,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ananas"},
+                new AutomatItem{Id=4,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Portakal"},
+                new AutomatItem{Id=5,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Mandalina"},
+                new AutomatItem{Id=6,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kivi"},
+                new AutomatItem{Id=7,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Çilek"},
+                new AutomatItem{Id=8,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Muz"},
+                new AutomatItem{Id=9,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Avokado"},
+                new AutomatItem{Id=10,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Üzüm"},
+                new AutomatItem{Id=11,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Hurma"},
+                new AutomatItem{Id=12,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Nar"},
+                new AutomatItem{Id=13,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Greyfurt"},
+                new AutomatItem{Id=14,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Badem"},
+                new AutomatItem{Id=15,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Fındık"},
+                new AutomatItem{Id=16,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ayva"},
+                new AutomatItem{Id=17,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ceviz"},
+                new AutomatItem{Id=18,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="KEstane"},
+                new AutomatItem{Id=19,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Su"},
+                new AutomatItem{Id=20,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="ŞEftali"},
+                new AutomatItem{Id=21,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Nektari"},
+                new AutomatItem{Id=22,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Yaban Mersini"},
+                new AutomatItem{Id=23,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kayısı"},
+                new AutomatItem{Id=24,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Erik"},
+                new AutomatItem{Id=25,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kaju"},
+                new AutomatItem{Id=26,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Karadut"},
+                
+            };
+            modelBuilder.Entity<AutomatItem>().HasData(outomatItems);
+
+            #endregion
+
+
+            #region StudentMenu
+
+            var studentMenu = new StudentMenu[]
+            {
+                new StudentMenu{Id=1,CreatedDate=createdDate,IsDeleted=false,Status=false,SeledtedItem="{'Elma','Portakal','Su' }",StudentId=1 }
+            };
+            modelBuilder.Entity<StudentMenu>().HasData(studentMenu);
+
+            #endregion
             base.OnModelCreating(modelBuilder);
         }
 

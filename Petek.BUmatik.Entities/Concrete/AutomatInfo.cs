@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Petek.BUmatik.Entities.Concrete
 {
-    public class AutomatInfo
+    public class AutomatInfo:Base,IEntity
     {
         public string Brand { get; set; }
         public string Model { get; set; }

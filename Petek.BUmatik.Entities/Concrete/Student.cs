@@ -25,16 +25,18 @@ namespace Petek.BUmatik.Entities.Concrete
         public virtual Parent Parents { get; set; }
         public virtual AdminUser AdminUser { get; set; }
 
+        public virtual ICollection<StudentMenu> StudentMenus{ get; set; }
+
+
     }
     public class StudentEntityConfiguration : IEntityTypeConfiguration<Student>
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
-            //builder.HasOne(m => m.School)
-            //    .WithMany(b => b.Students)
-            //    .HasForeignKey(s=>s.SchoolId)
-            //    .OnDelete(DeleteBehavior.Restrict)
-            //    .IsRequired();
+            builder.HasMany(m => m.StudentMenus)
+               .WithOne(e => e.Student)
+               .HasForeignKey(e => e.StudentId)
+               .OnDelete(DeleteBehavior.Restrict);
         }
     }
 

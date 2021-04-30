@@ -11,6 +11,15 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
     public class EfUserDal : EfEntityRepositoryBase<Parent, BUmatikContext>, IUserDal
     {
+        public void AdminUserAdd(AdminUser Add)
+        {
+            using (var context = new BUmatikContext())
+            {
+                context.AdminUsers.Add(Add);
+                context.SaveChanges();
+            }
+        }
+
         public List<OperationClaim> GetClaims(Parent user)
         {
             using (var context = new BUmatikContext())
@@ -37,6 +46,15 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 }).ToList();
 
                 return datas;
+            }
+        }
+
+        public void StudentAdd(Student student)
+        {
+            using (var context = new BUmatikContext())
+            {
+                context.Students.Add(student);
+                context.SaveChanges();
             }
         }
     }

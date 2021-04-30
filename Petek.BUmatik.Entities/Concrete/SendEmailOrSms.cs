@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Petek.BUmatik.Entities.Concrete
 {
-    public class SendEmailOrSms:Base
+    public class SendEmailOrSms:Base,IEntity
     {
         public string SmsOrEmail { get; set; }//SmsOrEmailEnum
         public string ToAddress { get; set; } //if send email, add email address

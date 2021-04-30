@@ -11,5 +11,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
     {
         List<OperationClaim> GetClaims(Parent user);
         List<ParentDTO> GetParents();
+        void StudentAdd(Student Add);
+        void AdminUserAdd(AdminUser Add);
     }
 }

@@ -14,6 +14,7 @@ namespace Petek.BUmatik.Business.Concrete
     public class UserManager : IUserService
     {
         IUserDal _userDal;
+        IAdminUserDal _adminUserDal;
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
@@ -36,8 +37,22 @@ namespace Petek.BUmatik.Business.Concrete
         [CacheAspect]
         public IDataResult<List<ParentDTO>> GetParentDTOs()
         {
-
             return new SuccessDataResult<List<ParentDTO>>(_userDal.GetParents(), "Kullanıcılar listelendi.");
+        }
+
+        public void StudentAdd(Student student)
+        {
+            _userDal.StudentAdd(student);
+        }
+
+        public void AdminUserAdd(AdminUser user)
+        {
+            _userDal.AdminUserAdd(user);
+        }
+
+        public AdminUser AdminUserGetByMail(string email)
+        {
+            return _adminUserDal.Get(u => u.Email == email && u.IsDeleted == false);
         }
     }
 }

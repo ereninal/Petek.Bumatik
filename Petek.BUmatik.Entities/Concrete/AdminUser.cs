@@ -16,7 +16,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public virtual ICollection<Parent> Parents{ get; set; }
         public virtual ICollection<City> Cities{ get; set; }
         public virtual ICollection<County> Counties{ get; set; }
-        public virtual ICollection<UserOperationClaim> OperationClaims { get; set; }
+        public virtual ICollection<OperationClaim> OperationClaims { get; set; }
         public virtual ICollection<School> Schools{ get; set; }
         public virtual ICollection<UserOperationClaim> UserOperationClaims{ get; set; }
 
