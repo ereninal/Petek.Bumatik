@@ -36,7 +36,23 @@ namespace Petek.BUmatik.API.Controllers
 
             return BadRequest(result.Message);
         }
+        [HttpPost("AdminUserLogin")]
+        public ActionResult AdminLogin(UserForLoginDto userForLoginDto)
+        {
+            var userToLogin = _authService.AdminUserLogin(userForLoginDto);
+            if (!userToLogin.Success)
+            {
+                return BadRequest(userToLogin.Message);
+            }
 
+            var result = _authService.AdminUserCreateAccessToken(userToLogin.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
         [HttpPost("Register")]
         public ActionResult Register(UserForRegisterDto userForRegisterDto)
         {
@@ -48,6 +64,24 @@ namespace Petek.BUmatik.API.Controllers
 
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             var result = _authService.CreateAccessToken(registerResult.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+        [HttpPost("AdminUserRegister")]
+        public ActionResult AdminRegister(UserForRegisterDto userForRegisterDto)
+        {
+            var userExists = _authService.AdminUserExists(userForRegisterDto.Email);
+            if (!userExists.Success)
+            {
+                return BadRequest(userExists.Message);
+            }
+
+            var registerResult = _authService.AdminUserRegister(userForRegisterDto, userForRegisterDto.Password);
+            var result = _authService.AdminUserCreateAccessToken(registerResult.Data);
             if (result.Success)
             {
                 return Ok(result.Data);

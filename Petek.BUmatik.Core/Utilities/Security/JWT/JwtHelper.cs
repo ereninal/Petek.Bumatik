@@ -39,6 +39,22 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
             };
 
         }
+        public AccessToken AdminCreateToken(AdminUser user)
+        {
+            _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
+            var securityKey = SecurityHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
+            var signingCredentials = SigningCredentialHelper.CreateSigningCredentials(securityKey);
+            var jwt = AdminUserCreateJwtSecurityToken(_tokenOptions, user, signingCredentials);
+            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            var token = jwtSecurityTokenHandler.WriteToken(jwt);
+
+            return new AccessToken
+            {
+                Token = token,
+                Expiration = _accessTokenExpiration
+            };
+
+        }
 
         public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, Parent user,SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
@@ -48,6 +64,18 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
                 expires: _accessTokenExpiration,
                 notBefore: DateTime.Now,
                 claims: SetClaims(user, operationClaims),
+                signingCredentials: signingCredentials
+            );
+            return jwt;
+        }
+        public JwtSecurityToken AdminUserCreateJwtSecurityToken(TokenOptions tokenOptions, AdminUser user, SigningCredentials signingCredentials)
+        {
+            var jwt = new JwtSecurityToken(
+                issuer: tokenOptions.Issuer,
+                audience: tokenOptions.Audience,
+                expires: _accessTokenExpiration,
+                notBefore: DateTime.Now,
+                claims:null,
                 signingCredentials: signingCredentials
             );
             return jwt;
@@ -62,6 +90,11 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
             claims.AddRoles(operationClaims.Select(c => c.Name).ToArray());
 
             return claims;
+        }
+
+        public AccessToken AdminCreateToken(AdminUser user, List<OperationClaim> operationClaims)
+        {
+            throw new NotImplementedException();
         }
     }
 }

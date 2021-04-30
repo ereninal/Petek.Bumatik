@@ -1,4 +1,6 @@
 ﻿using Petek.BUmatik.Business.Abstract;
+using Petek.BUmatik.Business.BusinessAspects.Autofac;
+using Petek.BUmatik.Core.Aspects.Autofac.Caching;
 using Petek.BUmatik.Core.Utilities.Results;
 using Petek.BUmatik.Core.Utilities.Security.Hashing;
 using Petek.BUmatik.Core.Utilities.Security.JWT;
@@ -14,14 +16,16 @@ namespace Petek.BUmatik.Business.Concrete
     public class AuthManager : IAuthService
     {
         private IUserService _userService;
+        private IAdminUserService _adminUserService;
         private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper, IAdminUserService adminUserService)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
+            _adminUserService = adminUserService;
         }
-
+        [CacheRemoveAspect("IStudentService.Get")]//herşey interface üzerinden oluyor. Tümü silmek içini tırnak içine Get yazdığımızda tüm get isteklerini siler -Eren
         public IDataResult<Parent> Register(UserForRegisterDto userForRegisterDto, string password)
         {
             byte[] passwordHash, passwordSalt;
@@ -37,7 +41,7 @@ namespace Petek.BUmatik.Business.Concrete
             _userService.Add(user);
             return new SuccessDataResult<Parent>(user, Messages.UserRegistered);
         }
-
+        
         public IDataResult<Parent> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);
@@ -53,10 +57,17 @@ namespace Petek.BUmatik.Business.Concrete
 
             return new SuccessDataResult<Parent>(userToCheck, Messages.SuccessfulLogin);
         }
-
         public IResult UserExists(string email)
         {
             if (_userService.GetByMail(email) != null)
+            {
+                return new ErrorResult(Messages.UserAlreadyExists);
+            }
+            return new SuccessResult();
+        }
+        public IResult AdminUserExists(string email)
+        {
+            if (_adminUserService.AdminUserGetByMail(email) != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }
@@ -82,13 +93,13 @@ namespace Petek.BUmatik.Business.Concrete
                 PasswordSalt = passwordSalt,
                 IsDeleted = false
             };
-            _userService.AdminUserAdd(user);
+            _adminUserService.AdminUserAdd(user);
             return new SuccessDataResult<AdminUser>(user, Messages.UserRegistered);
         }
 
         public IDataResult<AdminUser> AdminUserLogin(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userService.AdminUserGetByMail(userForLoginDto.Email);
+            var userToCheck = _adminUserService.AdminUserGetByMail(userForLoginDto.Email);
             if (userToCheck == null)
             {
                 return new ErrorDataResult<AdminUser>(Messages.UserNotFound);
@@ -100,6 +111,12 @@ namespace Petek.BUmatik.Business.Concrete
             }
 
             return new SuccessDataResult<AdminUser>(userToCheck, Messages.SuccessfulLogin);
+        }
+
+        public IDataResult<AccessToken> AdminUserCreateAccessToken(AdminUser user)
+        {
+            var accessToken = _tokenHelper.AdminCreateToken(user);
+            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
     }
 }

@@ -24,6 +24,16 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             builder.RegisterType<StudentManager>().As<IStudentService>().SingleInstance();
             builder.RegisterType<EfStudentDal>().As<IStudentDal>().SingleInstance();
 
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<AdminUserManager>().As<IAdminUserService>();
+
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+            builder.RegisterType<EfAdminUserDal>().As<IAdminUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+
             builder.Register(context => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Student, StudentDTO>();
@@ -40,11 +50,7 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             .As<IMapper>()
             .InstancePerLifetimeScope();
 
-            builder.RegisterType<UserManager>().As<IUserService>();
-            builder.RegisterType<EfUserDal>().As<IUserDal>();
-
-            builder.RegisterType<AuthManager>().As<IAuthService>();
-            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+           
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
@@ -53,10 +59,6 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
                 {
                     Selector = new AspectInterceptorSelector()
                 }).SingleInstance();
-
-
-
-
         }
     }
 }

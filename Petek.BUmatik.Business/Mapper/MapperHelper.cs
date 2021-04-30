@@ -14,9 +14,9 @@ namespace Petek.BUmatik.Business.Mapper
             CreateMap<Student, StudentDTO>().ReverseMap();
             CreateMap<School, SchoolDTO>()
                 .ForMember(dest => dest.SchoolName, opt =>
-                 {
-                     opt.MapFrom(src => src.Name);
-                 });
+                {
+                    opt.MapFrom(src => src.Name);
+                });
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Petek.BUmatik.Shared.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
@@ -45,6 +46,22 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     PasswordSalt = m.PasswordSalt
                 }).ToList();
 
+                return datas;
+            }
+        }
+
+        public List<StudentDTO> GetStudentsByParent(int? id)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var datas = context.Students.Include(s=>s.Schools).Where(m => m.IsDeleted == false && m.ParentId == id).Select(m => new StudentDTO()
+                {
+                    BandNumber = m.BandNumber,
+                    Fullname = m.FullName,
+                    RemainingMoney = m.RemainingMoney,
+                    SchoolName = m.Schools.Name
+
+                }).ToList();
                 return datas;
             }
         }

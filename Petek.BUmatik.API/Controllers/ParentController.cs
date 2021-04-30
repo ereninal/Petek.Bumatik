@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Petek.BUmatik.Business.Abstract;
+using Petek.BUmatik.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +28,37 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("GetStudentByParent")]
+        public IActionResult GetStudentByParent(int? id)
+        {
+            var result = _userService.GetStudentsByParent(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("AddStudentByParent")]
+        public IActionResult AddStudentByParent(Student student)
+        {
+            var result = _userService.AddStudentByParent(student);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
+        //[HttpPost("SetMenuByNumber")]
+        //public IActionResult GetStudentByParent()
+        //{
+        //    var result = _userService.SetMenuByNumber(bandNumber);
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest(result);
+        //}
     }
 }

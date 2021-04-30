@@ -42,7 +42,7 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result.Message);
         }
-
+       
         [HttpGet("GetStudentById")]
         public IActionResult GetStudentById(int studentId)
         {

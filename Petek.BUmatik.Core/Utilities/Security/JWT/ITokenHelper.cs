@@ -8,5 +8,6 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
     public interface ITokenHelper
     {
         AccessToken CreateToken(Parent user, List<OperationClaim> operationClaims);
+        AccessToken AdminCreateToken(AdminUser user);
     }
 }

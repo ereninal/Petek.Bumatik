@@ -11,11 +11,12 @@ namespace Petek.BUmatik.Business.Abstract
     {
         List<OperationClaim> GetClaims(Parent user);
         void Add(Parent user);
-        void AdminUserAdd(AdminUser user);
         void StudentAdd(Student student);
         IDataResult<List<ParentDTO>> GetParentDTOs();
-
+        IDataResult<List<StudentDTO>> GetStudentsByParent(int? id);
         Parent GetByMail(string email);
-        AdminUser AdminUserGetByMail(string email);
+        IResult AddStudentByParent(Student student);
+
+
     }
 }

@@ -8,8 +8,9 @@ namespace Petek.BUmatik.DataAccess.Abstract
 {
     public interface IAdminUserDal: IEntityRepository<AdminUser>
     {
-        //List<AutomatInfo> GetAutomatInfos(); 
-        //List<AutomatItem> GetAutomatItems(); 
-        //List<Parent> GetParents();
+        List<OperationClaim> GetClaims(AdminUser user);
+        List<AdminUser> GetParents();
+        void StudentAdd(Student Add);
+        void AdminUserAdd(AdminUser Add);
     }
 }
