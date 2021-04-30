@@ -9,6 +9,8 @@ namespace Petek.BUmatik.Entities.Concrete
     public class OperationClaim:Base, IEntity
     {
         public string Name{ get; set; }
+        public virtual AdminUser AdminUser { get; set; }
+
         public virtual ICollection<UserOperationClaim> OperationClaims { get; set; }
 
     }

@@ -23,6 +23,7 @@ namespace Petek.BUmatik.Entities.Concrete
 
         public virtual School Schools { get; set; }
         public virtual Parent Parents { get; set; }
+        public virtual AdminUser AdminUser { get; set; }
 
     }
     public class StudentEntityConfiguration : IEntityTypeConfiguration<Student>

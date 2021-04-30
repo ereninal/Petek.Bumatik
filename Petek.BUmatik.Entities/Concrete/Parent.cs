@@ -12,6 +12,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public string Email { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public virtual AdminUser AdminUser { get; set; }
 
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<UserOperationClaim> OperationClaims { get; set; }

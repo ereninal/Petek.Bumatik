@@ -12,8 +12,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public int OperationClaimId { get; set; }
         public virtual OperationClaim OperationClaims { get; set; }
         public virtual Parent Parents{ get; set; }
-
-
+        public virtual AdminUser AdminUser { get; set; }
 
     }
     public class UserOperationClaimEntityConfiguration : IEntityTypeConfiguration<UserOperationClaim>
