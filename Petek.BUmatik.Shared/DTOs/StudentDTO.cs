@@ -10,6 +10,9 @@ namespace Petek.BUmatik.Shared.DTOs
         public decimal RemainingMoney { get; set; }
         public string SchoolName { get; set; }
         public string BandNumber { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public int RecordsTotal { get; set; }
 
 
     }

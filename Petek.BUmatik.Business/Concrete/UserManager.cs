@@ -49,7 +49,7 @@ namespace Petek.BUmatik.Business.Concrete
         {
             _userDal.StudentAdd(student);
         }
-        [SecuredOperation("Admin,Member")]
+        //[SecuredOperation("Admin,Member")]
         [CacheAspect]
         public IDataResult<List<StudentDTO>> GetStudentsByParent(int? id)
         {

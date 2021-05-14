@@ -41,6 +41,8 @@ namespace Petek.BUmatik.API
             //services.AddSingleton<IStudentDal, EfStudentDal>();
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
+            services.AddCors();//Front-End gelen isteklere izin verdik.-Eren
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -68,6 +70,8 @@ namespace Petek.BUmatik.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200").AllowAnyHeader());//Front-End gelen isteklere izin verdik.-Eren
 
             app.UseHttpsRedirection();
 

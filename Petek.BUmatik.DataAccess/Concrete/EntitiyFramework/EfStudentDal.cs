@@ -22,7 +22,9 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     Fullname = m.FullName,
                     BandNumber = m.BandNumber,
                     RemainingMoney = m.RemainingMoney,
-                    SchoolName = m.Schools.Name
+                    SchoolName = m.Schools.Name,
+                    CreatedDate = m.CreatedDate,
+                    ModifiedDate = m.ModifiedDate
 
                 }).ToList();
                 return datas;
