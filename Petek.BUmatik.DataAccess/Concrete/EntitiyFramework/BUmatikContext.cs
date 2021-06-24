@@ -28,7 +28,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public DbSet<City> Cities { get; set; }
         public DbSet<SendEmailOrSms> SendEmailOrSms{ get; set; }
         public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<AutomatItemInfo> AutomatItemInfos{ get; set; }
+        public DbSet<ItemCategory> ItemCategories{ get; set; }
         public DbSet<AutomatItem> AutomatItems{ get; set; }
+        public DbSet<SelectedMenuItems> SelectedMenuItems{ get; set; }
+        public DbSet<MenuType> MenuTypes{ get; set; }
+        public DbSet<Menu> Menus{ get; set; }
         public DbSet<StudentMenu> StudentMenus{ get; set; }
 
         #endregion
@@ -289,41 +294,22 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             #endregion
 
-            #region AutomatInfos
-            var outomatItems = new AutomatItem[]
+            #region AutomatItemInfos
+            var outomatItems = new AutomatItemInfo[]
             {
-                new AutomatItem{Id=1,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Elma"},
-                new AutomatItem{Id=2,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Armut"},
-                new AutomatItem{Id=3,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ananas"},
-                new AutomatItem{Id=4,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Portakal"},
-                new AutomatItem{Id=5,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Mandalina"},
-                new AutomatItem{Id=6,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kivi"},
-                new AutomatItem{Id=7,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Çilek"},
-                new AutomatItem{Id=8,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Muz"},
-                new AutomatItem{Id=9,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Avokado"},
-                new AutomatItem{Id=10,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Üzüm"},
-                new AutomatItem{Id=11,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Hurma"},
-                new AutomatItem{Id=12,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Nar"},
-                new AutomatItem{Id=13,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Greyfurt"},
-                new AutomatItem{Id=14,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Badem"},
-                new AutomatItem{Id=15,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Fındık"},
-                new AutomatItem{Id=16,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ayva"},
-                new AutomatItem{Id=17,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Ceviz"},
-                new AutomatItem{Id=18,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="KEstane"},
-                new AutomatItem{Id=19,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Su"},
-                new AutomatItem{Id=20,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="ŞEftali"},
-                new AutomatItem{Id=21,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Nektari"},
-                new AutomatItem{Id=22,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Yaban Mersini"},
-                new AutomatItem{Id=23,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kayısı"},
-                new AutomatItem{Id=24,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Erik"},
-                new AutomatItem{Id=25,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Kaju"},
-                new AutomatItem{Id=26,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,LastUseDate=createdDate,Name="Karadut"},
+                new AutomatItemInfo{Id=1,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=2,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=3,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=4,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=5,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=6,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                new AutomatItemInfo{Id=7,Count=10,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false,},
+                
                 
             };
-            modelBuilder.Entity<AutomatItem>().HasData(outomatItems);
+            modelBuilder.Entity<AutomatItemInfo>().HasData(outomatItems);
 
             #endregion
-
 
             #region StudentMenu
 
@@ -334,6 +320,74 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             modelBuilder.Entity<StudentMenu>().HasData(studentMenu);
 
             #endregion
+
+            #region ItemCategory
+
+            var itemCategory = new ItemCategory[]
+            {
+                new ItemCategory{Id=1,Name="İçecek",Description="",CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1},
+                new ItemCategory{Id=2,Name="Katı Gıda",Description="",CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1},
+                new ItemCategory{Id=3,Name="Meyve",Description="",CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1},
+                new ItemCategory{Id=4,Name="Kuruyemiş",Description="",CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1},
+            };
+            modelBuilder.Entity<ItemCategory>().HasData(itemCategory);
+
+            #endregion
+
+            #region MenuType
+
+            var menuType = new MenuType[]
+            {
+                new MenuType{Id=1,Type="Sabah",StartDate= new TimeSpan(6,0,0),FinishDate=new TimeSpan(10,0,0),CreatedDate=createdDate,CreatedUserId =1,IsDeleted=false},
+                new MenuType{Id=2,Type="Öğle",StartDate= new TimeSpan(12,0,0),FinishDate=new TimeSpan(3,0,0),CreatedDate=createdDate,CreatedUserId =1,IsDeleted=false},
+            };
+            modelBuilder.Entity<MenuType>().HasData(menuType);
+
+            #endregion
+
+            #region AutomatItems
+
+            var automatItems = new AutomatItem[]
+            {
+                new AutomatItem{Id=1,Name="Portakal",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=3,InfoId=1},
+                new AutomatItem{Id=2,Name="Ceviz",Price=5,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=4,InfoId=2},
+                new AutomatItem{Id=3,Name="Fındık",Price=7,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=4,InfoId=3},
+                new AutomatItem{Id=4,Name="Erikli Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=4},
+                new AutomatItem{Id=5,Name="Damla Su",Price=1,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=5},
+                new AutomatItem{Id=6,Name="Hamidiye Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=6},
+                new AutomatItem{Id=7,Name="Sandviç",Price=8,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=2,InfoId=7},
+            };
+            modelBuilder.Entity<AutomatItem>().HasData(automatItems);
+
+
+            #endregion
+
+            #region Menu
+
+            var menu = new Menu[] 
+            { 
+                new Menu{Id=1,MenuTypeId=1,StudentId=2,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+                new Menu{Id=2,MenuTypeId=2,StudentId=2,CreatedDate=createdDate,CreatedUserId=1,IsDeleted=false},
+            };
+            modelBuilder.Entity<Menu>().HasData(menu);
+
+            #endregion
+
+            #region SelectedMenuItems
+
+            var selectedMenuItems = new SelectedMenuItems[]
+            {
+                new SelectedMenuItems{Id=1,MenuId=1,ItemId=1,Count=2,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=2,MenuId=1,ItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=3,MenuId=1,ItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=4,MenuId=2,ItemId=7,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=5,MenuId=2,ItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=6,MenuId=2,ItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+            };
+            modelBuilder.Entity<SelectedMenuItems>().HasData(selectedMenuItems);
+
+            #endregion
+
             base.OnModelCreating(modelBuilder);
         }
 
