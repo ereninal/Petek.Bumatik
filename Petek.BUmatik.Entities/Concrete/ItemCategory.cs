@@ -20,7 +20,7 @@ namespace Petek.BUmatik.Entities.Concrete
         {
             builder.HasMany(m => m.AutomatItems)
                .WithOne(e => e.ItemCategory)
-               .HasForeignKey(e => e.CategoryId)
+               .HasForeignKey(e => e.ItemCategoryId)
                .OnDelete(DeleteBehavior.Restrict);
         }
     }

@@ -11,8 +11,8 @@ namespace Petek.BUmatik.Entities.Concrete
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public int CategoryId { get; set; }
-        public int InfoId { get; set; }
+        public int ItemCategoryId { get; set; }
+        public int AutomatItemInfoId { get; set; }
         public virtual ItemCategory ItemCategory { get; set; }
         public virtual AutomatItemInfo AutomatItemInfo{ get; set; }
         public virtual ICollection<SelectedMenuItems> SelectedMenuItems{ get; set; }
@@ -25,7 +25,7 @@ namespace Petek.BUmatik.Entities.Concrete
         {
             builder.HasMany(m => m.SelectedMenuItems)
                 .WithOne(e => e.AutomatItem)
-                .HasForeignKey(e => e.ItemId)
+                .HasForeignKey(e => e.AutomatItemId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

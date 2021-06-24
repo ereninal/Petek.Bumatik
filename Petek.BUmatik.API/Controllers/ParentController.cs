@@ -48,7 +48,16 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
-
+        [HttpGet("GetAutomatItems")]
+        public IActionResult GetAutomatItems(int? id)
+        {
+            var result = _userService.GetStudentsByParent(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         //[HttpPost("SetMenuByNumber")]
         //public IActionResult GetStudentByParent()

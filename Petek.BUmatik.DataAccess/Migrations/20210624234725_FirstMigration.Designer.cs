@@ -10,7 +10,7 @@ using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 namespace Petek.BUmatik.DataAccess.Migrations
 {
     [DbContext(typeof(BUmatikContext))]
-    [Migration("20210430102835_FirstMigration")]
+    [Migration("20210624234725_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,38 +67,38 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Email = "eren@petek.com",
                             FullName = "Eren İnal",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 42, 105, 186, 199, 92, 15, 136, 48, 231, 186, 67, 40, 52, 222, 212, 8, 17, 35, 253, 188, 244, 54, 28, 149, 55, 93, 147, 36, 52, 4, 245, 132, 239, 254, 110, 185, 101, 207, 230, 17, 174, 161, 8, 106, 105, 139, 106, 43, 108, 34, 163, 218, 159, 102, 166, 96, 175, 161, 141, 175, 171, 159, 237, 179 },
-                            PasswordSalt = new byte[] { 204, 94, 81, 21, 72, 75, 20, 233, 155, 140, 245, 226, 168, 195, 60, 72, 150, 108, 203, 91, 63, 106, 206, 111, 224, 5, 49, 226, 84, 14, 219, 68, 114, 163, 250, 171, 74, 251, 200, 134, 125, 75, 120, 123, 10, 82, 66, 53, 95, 35, 50, 48, 50, 78, 212, 123, 245, 40, 244, 159, 133, 84, 18, 145, 98, 82, 171, 17, 6, 32, 79, 173, 48, 0, 236, 109, 84, 207, 136, 14, 107, 1, 139, 255, 194, 175, 1, 236, 248, 67, 165, 70, 171, 95, 29, 112, 115, 138, 81, 249, 162, 120, 37, 3, 100, 58, 169, 209, 101, 139, 188, 121, 229, 246, 96, 103, 177, 208, 133, 230, 242, 250, 101, 65, 231, 37, 5, 105 }
+                            PasswordHash = new byte[] { 103, 243, 137, 139, 2, 212, 232, 73, 116, 92, 150, 207, 8, 135, 17, 163, 124, 151, 158, 108, 97, 144, 30, 134, 58, 226, 70, 189, 244, 8, 183, 181, 164, 158, 39, 39, 163, 155, 142, 111, 253, 66, 106, 243, 160, 243, 207, 95, 175, 156, 155, 187, 251, 147, 243, 243, 43, 233, 146, 189, 38, 59, 233, 189 },
+                            PasswordSalt = new byte[] { 148, 210, 139, 107, 99, 223, 141, 55, 229, 71, 55, 39, 108, 193, 71, 158, 90, 238, 13, 166, 229, 172, 109, 243, 19, 1, 13, 174, 114, 12, 248, 129, 224, 206, 89, 187, 100, 127, 19, 177, 18, 71, 53, 167, 223, 38, 131, 90, 120, 87, 14, 199, 101, 170, 179, 253, 123, 2, 60, 204, 124, 169, 106, 133, 150, 57, 84, 67, 206, 222, 195, 86, 97, 236, 155, 246, 193, 175, 174, 223, 32, 138, 24, 48, 147, 128, 132, 18, 118, 191, 69, 73, 248, 241, 100, 143, 237, 11, 174, 252, 157, 150, 140, 101, 140, 85, 230, 154, 132, 126, 30, 43, 100, 10, 7, 207, 113, 88, 217, 3, 140, 159, 51, 86, 218, 128, 135, 186 }
                         },
                         new
                         {
                             Id = 2,
                             CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "pelinsu@petek.com",
-                            FullName = "Eren İnal",
+                            FullName = "Peinsu Baltacı",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 42, 105, 186, 199, 92, 15, 136, 48, 231, 186, 67, 40, 52, 222, 212, 8, 17, 35, 253, 188, 244, 54, 28, 149, 55, 93, 147, 36, 52, 4, 245, 132, 239, 254, 110, 185, 101, 207, 230, 17, 174, 161, 8, 106, 105, 139, 106, 43, 108, 34, 163, 218, 159, 102, 166, 96, 175, 161, 141, 175, 171, 159, 237, 179 },
-                            PasswordSalt = new byte[] { 204, 94, 81, 21, 72, 75, 20, 233, 155, 140, 245, 226, 168, 195, 60, 72, 150, 108, 203, 91, 63, 106, 206, 111, 224, 5, 49, 226, 84, 14, 219, 68, 114, 163, 250, 171, 74, 251, 200, 134, 125, 75, 120, 123, 10, 82, 66, 53, 95, 35, 50, 48, 50, 78, 212, 123, 245, 40, 244, 159, 133, 84, 18, 145, 98, 82, 171, 17, 6, 32, 79, 173, 48, 0, 236, 109, 84, 207, 136, 14, 107, 1, 139, 255, 194, 175, 1, 236, 248, 67, 165, 70, 171, 95, 29, 112, 115, 138, 81, 249, 162, 120, 37, 3, 100, 58, 169, 209, 101, 139, 188, 121, 229, 246, 96, 103, 177, 208, 133, 230, 242, 250, 101, 65, 231, 37, 5, 105 }
+                            PasswordHash = new byte[] { 103, 243, 137, 139, 2, 212, 232, 73, 116, 92, 150, 207, 8, 135, 17, 163, 124, 151, 158, 108, 97, 144, 30, 134, 58, 226, 70, 189, 244, 8, 183, 181, 164, 158, 39, 39, 163, 155, 142, 111, 253, 66, 106, 243, 160, 243, 207, 95, 175, 156, 155, 187, 251, 147, 243, 243, 43, 233, 146, 189, 38, 59, 233, 189 },
+                            PasswordSalt = new byte[] { 148, 210, 139, 107, 99, 223, 141, 55, 229, 71, 55, 39, 108, 193, 71, 158, 90, 238, 13, 166, 229, 172, 109, 243, 19, 1, 13, 174, 114, 12, 248, 129, 224, 206, 89, 187, 100, 127, 19, 177, 18, 71, 53, 167, 223, 38, 131, 90, 120, 87, 14, 199, 101, 170, 179, 253, 123, 2, 60, 204, 124, 169, 106, 133, 150, 57, 84, 67, 206, 222, 195, 86, 97, 236, 155, 246, 193, 175, 174, 223, 32, 138, 24, 48, 147, 128, 132, 18, 118, 191, 69, 73, 248, 241, 100, 143, 237, 11, 174, 252, 157, 150, 140, 101, 140, 85, 230, 154, 132, 126, 30, 43, 100, 10, 7, 207, 113, 88, 217, 3, 140, 159, 51, 86, 218, 128, 135, 186 }
                         },
                         new
                         {
                             Id = 3,
                             CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kemal@petek.com",
-                            FullName = "Eren İnal",
+                            FullName = "Mehmet Kemal Sarıkaya",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 42, 105, 186, 199, 92, 15, 136, 48, 231, 186, 67, 40, 52, 222, 212, 8, 17, 35, 253, 188, 244, 54, 28, 149, 55, 93, 147, 36, 52, 4, 245, 132, 239, 254, 110, 185, 101, 207, 230, 17, 174, 161, 8, 106, 105, 139, 106, 43, 108, 34, 163, 218, 159, 102, 166, 96, 175, 161, 141, 175, 171, 159, 237, 179 },
-                            PasswordSalt = new byte[] { 204, 94, 81, 21, 72, 75, 20, 233, 155, 140, 245, 226, 168, 195, 60, 72, 150, 108, 203, 91, 63, 106, 206, 111, 224, 5, 49, 226, 84, 14, 219, 68, 114, 163, 250, 171, 74, 251, 200, 134, 125, 75, 120, 123, 10, 82, 66, 53, 95, 35, 50, 48, 50, 78, 212, 123, 245, 40, 244, 159, 133, 84, 18, 145, 98, 82, 171, 17, 6, 32, 79, 173, 48, 0, 236, 109, 84, 207, 136, 14, 107, 1, 139, 255, 194, 175, 1, 236, 248, 67, 165, 70, 171, 95, 29, 112, 115, 138, 81, 249, 162, 120, 37, 3, 100, 58, 169, 209, 101, 139, 188, 121, 229, 246, 96, 103, 177, 208, 133, 230, 242, 250, 101, 65, 231, 37, 5, 105 }
+                            PasswordHash = new byte[] { 103, 243, 137, 139, 2, 212, 232, 73, 116, 92, 150, 207, 8, 135, 17, 163, 124, 151, 158, 108, 97, 144, 30, 134, 58, 226, 70, 189, 244, 8, 183, 181, 164, 158, 39, 39, 163, 155, 142, 111, 253, 66, 106, 243, 160, 243, 207, 95, 175, 156, 155, 187, 251, 147, 243, 243, 43, 233, 146, 189, 38, 59, 233, 189 },
+                            PasswordSalt = new byte[] { 148, 210, 139, 107, 99, 223, 141, 55, 229, 71, 55, 39, 108, 193, 71, 158, 90, 238, 13, 166, 229, 172, 109, 243, 19, 1, 13, 174, 114, 12, 248, 129, 224, 206, 89, 187, 100, 127, 19, 177, 18, 71, 53, 167, 223, 38, 131, 90, 120, 87, 14, 199, 101, 170, 179, 253, 123, 2, 60, 204, 124, 169, 106, 133, 150, 57, 84, 67, 206, 222, 195, 86, 97, 236, 155, 246, 193, 175, 174, 223, 32, 138, 24, 48, 147, 128, 132, 18, 118, 191, 69, 73, 248, 241, 100, 143, 237, 11, 174, 252, 157, 150, 140, 101, 140, 85, 230, 154, 132, 126, 30, 43, 100, 10, 7, 207, 113, 88, 217, 3, 140, 159, 51, 86, 218, 128, 135, 186 }
                         },
                         new
                         {
                             Id = 4,
                             CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "samet@petek.com",
-                            FullName = "Eren İnal",
+                            FullName = "Samet Dikmen",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 42, 105, 186, 199, 92, 15, 136, 48, 231, 186, 67, 40, 52, 222, 212, 8, 17, 35, 253, 188, 244, 54, 28, 149, 55, 93, 147, 36, 52, 4, 245, 132, 239, 254, 110, 185, 101, 207, 230, 17, 174, 161, 8, 106, 105, 139, 106, 43, 108, 34, 163, 218, 159, 102, 166, 96, 175, 161, 141, 175, 171, 159, 237, 179 },
-                            PasswordSalt = new byte[] { 204, 94, 81, 21, 72, 75, 20, 233, 155, 140, 245, 226, 168, 195, 60, 72, 150, 108, 203, 91, 63, 106, 206, 111, 224, 5, 49, 226, 84, 14, 219, 68, 114, 163, 250, 171, 74, 251, 200, 134, 125, 75, 120, 123, 10, 82, 66, 53, 95, 35, 50, 48, 50, 78, 212, 123, 245, 40, 244, 159, 133, 84, 18, 145, 98, 82, 171, 17, 6, 32, 79, 173, 48, 0, 236, 109, 84, 207, 136, 14, 107, 1, 139, 255, 194, 175, 1, 236, 248, 67, 165, 70, 171, 95, 29, 112, 115, 138, 81, 249, 162, 120, 37, 3, 100, 58, 169, 209, 101, 139, 188, 121, 229, 246, 96, 103, 177, 208, 133, 230, 242, 250, 101, 65, 231, 37, 5, 105 }
+                            PasswordHash = new byte[] { 103, 243, 137, 139, 2, 212, 232, 73, 116, 92, 150, 207, 8, 135, 17, 163, 124, 151, 158, 108, 97, 144, 30, 134, 58, 226, 70, 189, 244, 8, 183, 181, 164, 158, 39, 39, 163, 155, 142, 111, 253, 66, 106, 243, 160, 243, 207, 95, 175, 156, 155, 187, 251, 147, 243, 243, 43, 233, 146, 189, 38, 59, 233, 189 },
+                            PasswordSalt = new byte[] { 148, 210, 139, 107, 99, 223, 141, 55, 229, 71, 55, 39, 108, 193, 71, 158, 90, 238, 13, 166, 229, 172, 109, 243, 19, 1, 13, 174, 114, 12, 248, 129, 224, 206, 89, 187, 100, 127, 19, 177, 18, 71, 53, 167, 223, 38, 131, 90, 120, 87, 14, 199, 101, 170, 179, 253, 123, 2, 60, 204, 124, 169, 106, 133, 150, 57, 84, 67, 206, 222, 195, 86, 97, 236, 155, 246, 193, 175, 174, 223, 32, 138, 24, 48, 147, 128, 132, 18, 118, 191, 69, 73, 248, 241, 100, 143, 237, 11, 174, 252, 157, 150, 140, 101, 140, 85, 230, 154, 132, 126, 30, 43, 100, 10, 7, 207, 113, 88, 217, 3, 140, 159, 51, 86, 218, 128, 135, 186 }
                         });
                 });
 
@@ -289,6 +289,219 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.AutomatItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<int>("AutomatItemInfoId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("ItemCategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AutomatItemInfoId");
+
+                    b.HasIndex("ItemCategoryId");
+
+                    b.ToTable("AutomatItems");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AutomatItemInfoId = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 3,
+                            Name = "Portakal",
+                            Price = 2m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AutomatItemInfoId = 2,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 4,
+                            Name = "Ceviz",
+                            Price = 5m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AutomatItemInfoId = 3,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 4,
+                            Name = "Fındık",
+                            Price = 7m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AutomatItemInfoId = 4,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 1,
+                            Name = "Erikli Su",
+                            Price = 2m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AutomatItemInfoId = 5,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 1,
+                            Name = "Damla Su",
+                            Price = 1m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AutomatItemInfoId = 6,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 1,
+                            Name = "Hamidiye Su",
+                            Price = 2m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AutomatItemInfoId = 7,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            ItemCategoryId = 2,
+                            Name = "Sandviç",
+                            Price = 8m
+                        });
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.AutomatItemInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AutomatItemInfos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Count = 10,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false
+                        });
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.City", b =>
                 {
                     b.Property<int>("Id")
@@ -336,7 +549,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(3477),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(889),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Sarıyer"
@@ -345,7 +558,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4318),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2249),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beyoğlu"
@@ -354,7 +567,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 3,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4336),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2283),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Kartal"
@@ -363,7 +576,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 4,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4338),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2286),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Kadıköy"
@@ -372,7 +585,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 5,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4339),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2288),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Esenler"
@@ -381,7 +594,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 6,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4340),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2290),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Maltepe"
@@ -390,7 +603,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 7,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4342),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2292),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Zeytinburnu"
@@ -399,7 +612,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 8,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4343),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2294),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Bakırköy"
@@ -408,7 +621,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 9,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4346),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2296),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beylikdüzü"
@@ -417,7 +630,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 11,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4347),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2298),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Selçuklu"
@@ -426,7 +639,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 12,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4348),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2301),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beyşehir"
@@ -435,7 +648,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 13,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4350),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2303),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Akşehir"
@@ -444,7 +657,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 14,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4352),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2305),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Cihanbeyli"
@@ -453,7 +666,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 15,
                             CountryId = 35,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4353),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2307),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Foça"
@@ -462,7 +675,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 16,
                             CountryId = 35,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4355),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2309),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Selçuk"
@@ -471,7 +684,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 17,
                             CountryId = 35,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4356),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2311),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Urla "
@@ -480,7 +693,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 18,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4357),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2313),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Gölbaşı"
@@ -489,7 +702,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 19,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4359),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2316),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Şereflikoçhisar"
@@ -498,7 +711,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 20,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4360),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2318),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Keçiören"
@@ -507,7 +720,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 21,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4361),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2321),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beypazarı"
@@ -516,7 +729,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 22,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4362),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2323),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Polatlı"
@@ -525,7 +738,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 23,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4364),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2326),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Çanakkale "
@@ -534,7 +747,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 24,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4365),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2328),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Bozcaada"
@@ -543,7 +756,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 25,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4366),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2330),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Biga"
@@ -552,7 +765,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 26,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4368),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2332),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Ayvacık"
@@ -561,7 +774,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 27,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4369),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2335),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Ezine"
@@ -570,7 +783,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 28,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4370),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2336),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Gelibolu"
@@ -579,7 +792,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 29,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4371),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2339),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Şarköy"
@@ -588,7 +801,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 31,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4373),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2341),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Süleymanpaşa"
@@ -597,7 +810,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 32,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4374),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2343),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Çorlu"
@@ -606,7 +819,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 33,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4376),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2345),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Çerkezköy"
@@ -615,7 +828,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 34,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4377),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2347),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Saray"
@@ -624,7 +837,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 35,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4378),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2349),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Kapaklı"
@@ -633,7 +846,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 36,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4380),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2350),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Malkara"
@@ -642,7 +855,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 37,
                             CountryId = 22,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4381),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2352),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Keşan"
@@ -651,7 +864,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 38,
                             CountryId = 22,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4382),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2355),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Edirne"
@@ -660,7 +873,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 39,
                             CountryId = 22,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4383),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2357),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "İpsala"
@@ -669,7 +882,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 40,
                             CountryId = 67,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4385),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2359),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Zonguldak"
@@ -678,7 +891,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 41,
                             CountryId = 67,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4386),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2361),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Alaplı"
@@ -687,7 +900,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 42,
                             CountryId = 67,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4387),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2363),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Gökçebey"
@@ -696,7 +909,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 43,
                             CountryId = 67,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4389),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2365),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Çaycuma"
@@ -705,7 +918,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 44,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4390),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2367),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Akçaabat"
@@ -714,7 +927,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 45,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4391),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2369),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Düzköy"
@@ -723,7 +936,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 46,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4392),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2371),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Enez"
@@ -732,7 +945,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 47,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4394),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2373),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Arsin"
@@ -741,7 +954,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 48,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 4, 30, 13, 28, 34, 937, DateTimeKind.Local).AddTicks(4395),
+                            CreatedDate = new DateTime(2021, 6, 25, 2, 47, 24, 723, DateTimeKind.Local).AddTicks(2375),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beşikdüzü"
@@ -1433,6 +1646,195 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.ItemCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ItemCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            Description = "",
+                            IsDeleted = false,
+                            Name = "İçecek"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            Description = "",
+                            IsDeleted = false,
+                            Name = "Katı Gıda"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            Description = "",
+                            IsDeleted = false,
+                            Name = "Meyve"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            Description = "",
+                            IsDeleted = false,
+                            Name = "Kuruyemiş"
+                        });
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Menu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("MenuTypeId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MenuTypeId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Menus");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            MenuTypeId = 1,
+                            StudentId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            MenuTypeId = 2,
+                            StudentId = 2
+                        });
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.MenuType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<TimeSpan>("FinishDate")
+                        .HasColumnType("interval");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<TimeSpan>("StartDate")
+                        .HasColumnType("interval");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            FinishDate = new TimeSpan(0, 10, 0, 0, 0),
+                            IsDeleted = false,
+                            StartDate = new TimeSpan(0, 6, 0, 0, 0),
+                            Type = "Sabah"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            FinishDate = new TimeSpan(0, 3, 0, 0, 0),
+                            IsDeleted = false,
+                            StartDate = new TimeSpan(0, 12, 0, 0, 0),
+                            Type = "Öğle"
+                        });
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.OperationClaim", b =>
                 {
                     b.Property<int>("Id")
@@ -1602,8 +2004,8 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Email = "ereninal10@gmail.com",
                             FullName = "Eren İNAL",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 42, 105, 186, 199, 92, 15, 136, 48, 231, 186, 67, 40, 52, 222, 212, 8, 17, 35, 253, 188, 244, 54, 28, 149, 55, 93, 147, 36, 52, 4, 245, 132, 239, 254, 110, 185, 101, 207, 230, 17, 174, 161, 8, 106, 105, 139, 106, 43, 108, 34, 163, 218, 159, 102, 166, 96, 175, 161, 141, 175, 171, 159, 237, 179 },
-                            PasswordSalt = new byte[] { 204, 94, 81, 21, 72, 75, 20, 233, 155, 140, 245, 226, 168, 195, 60, 72, 150, 108, 203, 91, 63, 106, 206, 111, 224, 5, 49, 226, 84, 14, 219, 68, 114, 163, 250, 171, 74, 251, 200, 134, 125, 75, 120, 123, 10, 82, 66, 53, 95, 35, 50, 48, 50, 78, 212, 123, 245, 40, 244, 159, 133, 84, 18, 145, 98, 82, 171, 17, 6, 32, 79, 173, 48, 0, 236, 109, 84, 207, 136, 14, 107, 1, 139, 255, 194, 175, 1, 236, 248, 67, 165, 70, 171, 95, 29, 112, 115, 138, 81, 249, 162, 120, 37, 3, 100, 58, 169, 209, 101, 139, 188, 121, 229, 246, 96, 103, 177, 208, 133, 230, 242, 250, 101, 65, 231, 37, 5, 105 }
+                            PasswordHash = new byte[] { 103, 243, 137, 139, 2, 212, 232, 73, 116, 92, 150, 207, 8, 135, 17, 163, 124, 151, 158, 108, 97, 144, 30, 134, 58, 226, 70, 189, 244, 8, 183, 181, 164, 158, 39, 39, 163, 155, 142, 111, 253, 66, 106, 243, 160, 243, 207, 95, 175, 156, 155, 187, 251, 147, 243, 243, 43, 233, 146, 189, 38, 59, 233, 189 },
+                            PasswordSalt = new byte[] { 148, 210, 139, 107, 99, 223, 141, 55, 229, 71, 55, 39, 108, 193, 71, 158, 90, 238, 13, 166, 229, 172, 109, 243, 19, 1, 13, 174, 114, 12, 248, 129, 224, 206, 89, 187, 100, 127, 19, 177, 18, 71, 53, 167, 223, 38, 131, 90, 120, 87, 14, 199, 101, 170, 179, 253, 123, 2, 60, 204, 124, 169, 106, 133, 150, 57, 84, 67, 206, 222, 195, 86, 97, 236, 155, 246, 193, 175, 174, 223, 32, 138, 24, 48, 147, 128, 132, 18, 118, 191, 69, 73, 248, 241, 100, 143, 237, 11, 174, 252, 157, 150, 140, 101, 140, 85, 230, 154, 132, 126, 30, 43, 100, 10, 7, 207, 113, 88, 217, 3, 140, 159, 51, 86, 218, 128, 135, 186 }
                         });
                 });
 
@@ -1918,6 +2320,137 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.SelectedMenuItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<int>("AutomatItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("LastStatus")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("LastStatusDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("MenuId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AutomatItemId");
+
+                    b.HasIndex("MenuId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("SelectedMenuItems");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AutomatItemId = 1,
+                            Count = 2,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 1,
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AutomatItemId = 2,
+                            Count = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 1,
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AutomatItemId = 3,
+                            Count = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 1,
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AutomatItemId = 7,
+                            Count = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 2,
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AutomatItemId = 2,
+                            Count = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 2,
+                            StudentId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AutomatItemId = 3,
+                            Count = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedUserId = 1,
+                            IsDeleted = false,
+                            LastStatus = true,
+                            LastStatusDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MenuId = 2,
+                            StudentId = 1
+                        });
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.SendEmailOrSms", b =>
                 {
                     b.Property<int>("Id")
@@ -2066,6 +2599,55 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.StudentMenu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("CreatedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("ModifiedUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("SeledtedItem")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("StudentMenus");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2021, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            SeledtedItem = "{'Elma','Portakal','Su' }",
+                            Status = false,
+                            StudentId = 1
+                        });
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.UserOperationClaim", b =>
                 {
                     b.Property<int>("Id")
@@ -2145,6 +2727,25 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Navigation("Schools");
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.AutomatItem", b =>
+                {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.AutomatItemInfo", "AutomatItemInfo")
+                        .WithMany("AutomatItems")
+                        .HasForeignKey("AutomatItemInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.ItemCategory", "ItemCategory")
+                        .WithMany("AutomatItems")
+                        .HasForeignKey("ItemCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutomatItemInfo");
+
+                    b.Navigation("ItemCategory");
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.City", b =>
                 {
                     b.HasOne("Petek.BUmatik.Entities.Concrete.AdminUser", "AdminUser")
@@ -2167,6 +2768,25 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         .HasForeignKey("AdminUserId");
 
                     b.Navigation("AdminUser");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Menu", b =>
+                {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.MenuType", "MenuType")
+                        .WithMany("Menus")
+                        .HasForeignKey("MenuTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.Student", "Student")
+                        .WithMany("Menus")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MenuType");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.OperationClaim", b =>
@@ -2202,6 +2822,33 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Navigation("County");
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.SelectedMenuItems", b =>
+                {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.AutomatItem", "AutomatItem")
+                        .WithMany("SelectedMenuItems")
+                        .HasForeignKey("AutomatItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.Menu", "Menu")
+                        .WithMany("SelectedMenuItems")
+                        .HasForeignKey("MenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.Student", "Student")
+                        .WithMany("SelectedMenuItems")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AutomatItem");
+
+                    b.Navigation("Menu");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.SendEmailOrSms", b =>
                 {
                     b.HasOne("Petek.BUmatik.Entities.Concrete.AdminUser", "AdminUser")
@@ -2234,6 +2881,17 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Navigation("Parents");
 
                     b.Navigation("Schools");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.StudentMenu", b =>
+                {
+                    b.HasOne("Petek.BUmatik.Entities.Concrete.Student", "Student")
+                        .WithMany("StudentMenus")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.UserOperationClaim", b =>
@@ -2278,11 +2936,36 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Navigation("UserOperationClaims");
                 });
 
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.AutomatItem", b =>
+                {
+                    b.Navigation("SelectedMenuItems");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.AutomatItemInfo", b =>
+                {
+                    b.Navigation("AutomatItems");
+                });
+
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.County", b =>
                 {
                     b.Navigation("Cities");
 
                     b.Navigation("Schools");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.ItemCategory", b =>
+                {
+                    b.Navigation("AutomatItems");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Menu", b =>
+                {
+                    b.Navigation("SelectedMenuItems");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.MenuType", b =>
+                {
+                    b.Navigation("Menus");
                 });
 
             modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.OperationClaim", b =>
@@ -2302,6 +2985,15 @@ namespace Petek.BUmatik.DataAccess.Migrations
                     b.Navigation("AutomatInfos");
 
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("Petek.BUmatik.Entities.Concrete.Student", b =>
+                {
+                    b.Navigation("Menus");
+
+                    b.Navigation("SelectedMenuItems");
+
+                    b.Navigation("StudentMenus");
                 });
 #pragma warning restore 612, 618
         }

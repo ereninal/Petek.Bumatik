@@ -10,7 +10,7 @@ namespace Petek.BUmatik.Entities.Concrete
     {
         public int Count { get; set; }
         public int MenuId { get; set; }
-        public int ItemId { get; set; }
+        public int AutomatItemId { get; set; }
         public int StudentId { get; set; }
 
         public bool LastStatus{ get; set; }

@@ -349,13 +349,13 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             var automatItems = new AutomatItem[]
             {
-                new AutomatItem{Id=1,Name="Portakal",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=3,InfoId=1},
-                new AutomatItem{Id=2,Name="Ceviz",Price=5,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=4,InfoId=2},
-                new AutomatItem{Id=3,Name="Fındık",Price=7,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=4,InfoId=3},
-                new AutomatItem{Id=4,Name="Erikli Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=4},
-                new AutomatItem{Id=5,Name="Damla Su",Price=1,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=5},
-                new AutomatItem{Id=6,Name="Hamidiye Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=1,InfoId=6},
-                new AutomatItem{Id=7,Name="Sandviç",Price=8,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,CategoryId=2,InfoId=7},
+                new AutomatItem{Id=1,Name="Portakal",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=3,AutomatItemInfoId=1},
+                new AutomatItem{Id=2,Name="Ceviz",Price=5,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=2},
+                new AutomatItem{Id=3,Name="Fındık",Price=7,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=3},
+                new AutomatItem{Id=4,Name="Erikli Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=4},
+                new AutomatItem{Id=5,Name="Damla Su",Price=1,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=5},
+                new AutomatItem{Id=6,Name="Hamidiye Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=6},
+                new AutomatItem{Id=7,Name="Sandviç",Price=8,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=2,AutomatItemInfoId=7},
             };
             modelBuilder.Entity<AutomatItem>().HasData(automatItems);
 
@@ -377,12 +377,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             var selectedMenuItems = new SelectedMenuItems[]
             {
-                new SelectedMenuItems{Id=1,MenuId=1,ItemId=1,Count=2,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=2,MenuId=1,ItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=3,MenuId=1,ItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=4,MenuId=2,ItemId=7,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=5,MenuId=2,ItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=6,MenuId=2,ItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=1,MenuId=1,AutomatItemId=1,Count=2,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=2,MenuId=1,AutomatItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=3,MenuId=1,AutomatItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=4,MenuId=2,AutomatItemId=7,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=5,MenuId=2,AutomatItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=6,MenuId=2,AutomatItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
             };
             modelBuilder.Entity<SelectedMenuItems>().HasData(selectedMenuItems);
 
