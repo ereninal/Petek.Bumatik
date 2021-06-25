@@ -15,11 +15,11 @@ namespace Petek.BUmatik.Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IUserService _userService;
+        private IParentService _userService;
         private IAdminUserService _adminUserService;
         private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUserService userService, ITokenHelper tokenHelper, IAdminUserService adminUserService)
+        public AuthManager(IParentService userService, ITokenHelper tokenHelper, IAdminUserService adminUserService)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;

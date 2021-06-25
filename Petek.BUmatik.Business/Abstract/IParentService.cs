@@ -7,15 +7,19 @@ using System.Text;
 
 namespace Petek.BUmatik.Business.Abstract
 {
-    public interface IUserService
+    public interface IParentService
     {
         List<OperationClaim> GetClaims(Parent user);
         void Add(Parent user);
         void StudentAdd(Student student);
         IDataResult<List<ParentDTO>> GetParentDTOs();
         IDataResult<List<StudentDTO>> GetStudentsByParent(int? id);
+        IDataResult<SelectedMenuDetailsDTO> GetStudentMenuDetails(int id, int menuTypeId,DateTime useDate);
         Parent GetByMail(string email);
         IResult AddStudentByParent(Student student);
+        IResult AddSelectedMenuByStudent(List<SelectedMenuItems> selectedMenuItem);
+
+
 
 
     }

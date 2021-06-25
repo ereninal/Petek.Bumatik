@@ -12,7 +12,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public int MenuId { get; set; }
         public int AutomatItemId { get; set; }
         public int StudentId { get; set; }
-
+        public DateTime UseDate { get; set; }
         public bool LastStatus{ get; set; }
         public DateTime LastStatusDate{ get; set; }
         public virtual Menu Menu { get; set; }

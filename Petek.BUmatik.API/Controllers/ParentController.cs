@@ -13,8 +13,8 @@ namespace Petek.BUmatik.API.Controllers
     [ApiController]
     public class ParentController : ControllerBase
     {
-        IUserService _userService;
-        public ParentController(IUserService userService)
+        IParentService _userService;
+        public ParentController(IParentService userService)
         {
             _userService = userService;
         }
@@ -52,6 +52,26 @@ namespace Petek.BUmatik.API.Controllers
         public IActionResult GetAutomatItems(int? id)
         {
             var result = _userService.GetStudentsByParent(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("GetSelectedMenuDetailsByStudent")]
+        public IActionResult GetSelectedMenuDetailsByStudent(int id,int menuTypeId,DateTime useDate)
+        {
+            var result = _userService.GetStudentMenuDetails(id,menuTypeId,useDate);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("AddStudentByStudent")]
+        public IActionResult AddStudentByStudent(List<SelectedMenuItems> selectedMenuItems)
+        {
+            var result = _userService.AddSelectedMenuByStudent(selectedMenuItems);
             if (result.Success)
             {
                 return Ok(result);

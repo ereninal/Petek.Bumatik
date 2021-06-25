@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
-    public class EfUserDal : EfEntityRepositoryBase<Parent, BUmatikContext>, IUserDal
+    public class EfParentDal : EfEntityRepositoryBase<Parent, BUmatikContext>, IParentDal
     {
         public void AdminUserAdd(AdminUser Add)
         {
@@ -39,7 +39,8 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.Parents.Where(m => m.IsDeleted == false).Select(m => new ParentDTO() { 
+                var datas = context.Parents.Where(m => m.IsDeleted == false).Select(m => new ParentDTO()
+                {
                     Email = m.Email,
                     Fullname = m.FullName,
                     PasswordHash = m.PasswordHash,
@@ -54,7 +55,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.Students.Include(s=>s.Schools).Where(m => m.IsDeleted == false && m.ParentId == id).Select(m => new StudentDTO()
+                var datas = context.Students.Include(s => s.Schools).Where(m => m.IsDeleted == false && m.ParentId == id).Select(m => new StudentDTO()
                 {
                     BandNumber = m.BandNumber,
                     Fullname = m.FullName,
@@ -66,11 +67,46 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
+        public SelectedMenuDetailsDTO GetStudentMenuDetails(int id,int menuTypeId,DateTime useDate)
+        {
+
+            using (var context = new BUmatikContext())
+            {
+                var data = context.Students.Include(s => s.SelectedMenuItems).Where(m => m.IsDeleted == false && m.Id == id).Select(m => new SelectedMenuDetailsDTO()
+                {
+                    BandNumber = m.BandNumber,
+                    StudentName = m.FullName,
+                    MenuItems = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == useDate).ToList()
+
+                }).FirstOrDefault();
+                return data;
+            }
+        }
+
         public void StudentAdd(Student student)
         {
             using (var context = new BUmatikContext())
             {
                 context.Students.Add(student);
+                context.SaveChanges();
+            }
+        }
+
+        public void StudentMenuDetailsAdd(List<SelectedMenuItems> selectedMenuItem)
+        {
+            using (var context = new BUmatikContext())
+            {
+                foreach (var menuItem in selectedMenuItem)
+                {
+                    //var menuItem = new SelectedMenuItems();
+                    //menuItem.StudentId = item.StudentId;
+                    //menuItem.MenuId = item.MenuId;
+                    //menuItem.LastStatus = false;
+                    //menuItem.Count = item.Count;
+                    //menuItem.AutomatItemId = 1;
+                    //menuItem.UseDate = item.UseDate;
+                    context.SelectedMenuItems.Add(menuItem);
+                }
                 context.SaveChanges();
             }
         }

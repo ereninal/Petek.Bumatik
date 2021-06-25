@@ -7,11 +7,14 @@ using System.Text;
 
 namespace Petek.BUmatik.DataAccess.Abstract
 {
-    public interface IUserDal : IEntityRepository<Parent>
+    public interface IParentDal : IEntityRepository<Parent>
     {
         List<OperationClaim> GetClaims(Parent user);
         List<ParentDTO> GetParents();
         List<StudentDTO> GetStudentsByParent(int? id);
+
+        SelectedMenuDetailsDTO GetStudentMenuDetails(int id, int menuTypeId,DateTime useDate);
+        void StudentMenuDetailsAdd(List<SelectedMenuItems> selectedMenuItem);
         void StudentAdd(Student Add);
         void AdminUserAdd(AdminUser Add);
     }

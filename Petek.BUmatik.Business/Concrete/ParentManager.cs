@@ -16,44 +16,44 @@ using System.Text;
 
 namespace Petek.BUmatik.Business.Concrete
 {
-    public class UserManager : IUserService
+    public class ParentManager : IParentService
     {
-        IUserDal _userDal;
+        IParentDal _parentDal;
         IStudentDal _studentDal;
-       
-        public UserManager(IUserDal userDal,IStudentDal studentDal)
+
+        public ParentManager(IParentDal parentDal, IStudentDal studentDal)
         {
-            _userDal = userDal;
+            _parentDal = parentDal;
             _studentDal = studentDal;
         }
-        public List<OperationClaim> GetClaims(Parent user)
+        public List<OperationClaim> GetClaims(Parent parent)
         {
-            return _userDal.GetClaims(user);
+            return _parentDal.GetClaims(parent);
         }
         //[SecuredOperation("Admin")]
-        public void Add(Parent user)
+        public void Add(Parent parent)
         {
-            _userDal.Add(user);
+            _parentDal.Add(parent);
         }
         public Parent GetByMail(string email)
         {
-            return _userDal.Get(u => u.Email == email && u.IsDeleted == false);
+            return _parentDal.Get(u => u.Email == email && u.IsDeleted == false);
         }
         [CacheAspect]
         public IDataResult<List<ParentDTO>> GetParentDTOs()
         {
-            return new SuccessDataResult<List<ParentDTO>>(_userDal.GetParents(), "Kullanıcılar listelendi.");
+            return new SuccessDataResult<List<ParentDTO>>(_parentDal.GetParents(), "Kullanıcılar listelendi.");
         }
         [SecuredOperation("Member")]
         public void StudentAdd(Student student)
         {
-            _userDal.StudentAdd(student);
+            _parentDal.StudentAdd(student);
         }
         [SecuredOperation("Admin,Member")]
         [CacheAspect]
         public IDataResult<List<StudentDTO>> GetStudentsByParent(int? id)
         {
-            return new SuccessDataResult<List<StudentDTO>>(_userDal.GetStudentsByParent(id), "Kullanıcılar listelendi.");
+            return new SuccessDataResult<List<StudentDTO>>(_parentDal.GetStudentsByParent(id), "Kullanıcılar listelendi.");
         }
         [SecuredOperation("Admin,Member")]
         [ValidationAspect(typeof(StudentValidator))]
@@ -63,8 +63,21 @@ namespace Petek.BUmatik.Business.Concrete
             IResult result = BusinessRules.Run(CheckIfStudentBandNumberExists(student.BandNumber));
             if (result != null)
                 return result;
-            _userDal.StudentAdd(student);
+            _parentDal.StudentAdd(student);
             return new SuccessResult(Messages.StudentAdded);
+        }
+
+        //[SecuredOperation("Admin,Member")]
+        [CacheAspect]
+        public IDataResult<SelectedMenuDetailsDTO> GetStudentMenuDetails(int id, int menuTypeId, DateTime useDate)
+        {
+            return new SuccessDataResult<SelectedMenuDetailsDTO>(_parentDal.GetStudentMenuDetails(id, menuTypeId, useDate), "Menü detayları listelendi.");
+        }
+        //[SecuredOperation("Admin,Member")]
+        public IResult AddSelectedMenuByStudent(List<SelectedMenuItems> selectedMenuItem)
+        {
+            _parentDal.StudentMenuDetailsAdd(selectedMenuItem);
+            return new SuccessResult(Messages.MenuAdd);
         }
         private IResult CheckIfStudentBandNumberExists(string bandNumber)
         {
@@ -75,5 +88,6 @@ namespace Petek.BUmatik.Business.Concrete
             }
             return new SuccessResult();
         }
+        
     }
 }

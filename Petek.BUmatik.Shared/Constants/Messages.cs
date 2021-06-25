@@ -20,5 +20,6 @@ namespace Petek.BUmatik.Shared.Constants
         public static string SuccessfulLogin = "Login başarılı.";
         public static string UserAlreadyExists = "Oturum zaten açık.";
         public static string AccessTokenCreated = "Token oluşturuldu.";
+        public static string MenuAdd = "Seçtiğiniz menü başarıyla eklendi.";
     }
 }

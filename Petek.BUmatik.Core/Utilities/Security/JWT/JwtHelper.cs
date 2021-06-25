@@ -35,7 +35,11 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
             return new AccessToken
             {
                 Token = token,
-                Expiration = _accessTokenExpiration
+                Expiration = _accessTokenExpiration,
+                Fullname = user.FullName,
+                ParentEmail = user.Email,
+                ParentId = user.Id
+
             };
 
         }

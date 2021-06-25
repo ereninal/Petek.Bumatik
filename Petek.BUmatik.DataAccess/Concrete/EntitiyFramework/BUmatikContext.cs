@@ -377,12 +377,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             var selectedMenuItems = new SelectedMenuItems[]
             {
-                new SelectedMenuItems{Id=1,MenuId=1,AutomatItemId=1,Count=2,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=2,MenuId=1,AutomatItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=3,MenuId=1,AutomatItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=4,MenuId=2,AutomatItemId=7,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=5,MenuId=2,AutomatItemId=2,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
-                new SelectedMenuItems{Id=6,MenuId=2,AutomatItemId=3,Count=1,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=1,MenuId=1,AutomatItemId=1,Count=2,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=2,MenuId=1,AutomatItemId=2,Count=1,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=3,MenuId=1,AutomatItemId=3,Count=1,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=4,MenuId=2,AutomatItemId=7,Count=1,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=5,MenuId=2,AutomatItemId=2,Count=1,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
+                new SelectedMenuItems{Id=6,MenuId=2,AutomatItemId=3,Count=1,UseDate = new DateTime(2021,06,25),IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
             };
             modelBuilder.Entity<SelectedMenuItems>().HasData(selectedMenuItems);
 
