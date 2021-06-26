@@ -13,6 +13,7 @@ namespace Petek.BUmatik.Shared.Constants
         public static string StudentDeleted = "Öğrenci bilgisi silindi.";
         public static string StudentNameInvalid= "Öğrenci ismi geçersiz.";
         public static string StudentBandNumberAlreadyExists = "Band numrasına kayıtlı bir öğrenci zaten mevcut.";
+        public static string StudentBandNumberDontExists = "Band numrasına kayıtlı bir öğrenci Bulunamadı.";
         public static string AuthorizationDenied = "Yetkiniz yok.";
         public static string UserRegistered = "Kayıt oluşturuldu.";
         public static string UserNotFound = "Kullanıcı bulunamadı.";

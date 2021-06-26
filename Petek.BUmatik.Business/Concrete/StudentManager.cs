@@ -56,6 +56,7 @@ namespace Petek.BUmatik.Business.Concrete
         {
             return new SuccessDataResult<List<Student>>(_studentDal.GetAll(m => m.IsDeleted != true),"Öğrenciler listelendi.");
         }
+
         [SecuredOperation("Member")]
         public IDataResult<Student> GetStudentById(int studentId)
         {

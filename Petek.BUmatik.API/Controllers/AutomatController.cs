@@ -12,16 +12,26 @@ namespace Petek.BUmatik.API.Controllers
     [ApiController]
     public class AutomatController : ControllerBase
     {
-        IMenuProcessesService _menuProcessesService;
-        public AutomatController(IMenuProcessesService menuProcessesService)
+        IAutomatService _automatService;
+        public AutomatController(IAutomatService automatService)
         {
-            _menuProcessesService = menuProcessesService;
+            _automatService = automatService;
         }
         
         [HttpGet("GetAutomatItems")]
         public IActionResult GetAutomatItems()
         {
-            var result = _menuProcessesService.GetItemsDTO();
+            var result = _automatService.GetItemsDTO();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("GetMenuItemsByStudent")]
+        public IActionResult GetAutomatItems(string bandNumber,DateTime useDate,int menuTypeId)
+        {
+            var result = _automatService.GetMenuItemsByStudent(bandNumber, useDate,menuTypeId);
             if (result.Success)
             {
                 return Ok(result);

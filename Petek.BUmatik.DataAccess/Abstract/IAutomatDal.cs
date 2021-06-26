@@ -6,9 +6,10 @@ using System.Text;
 
 namespace Petek.BUmatik.DataAccess.Abstract
 {
-    public interface IAutomatItemsDal
+    public interface IAutomatDal
     {
         List<AutomatItemsDTO> GetAutomatItemsDTOs();
+        List<SelectedItemsDTO> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId);
         void ItemAdd(AutomatItem item);
     }
 }

@@ -7,9 +7,10 @@ using System.Text;
 
 namespace Petek.BUmatik.Business.Abstract
 {
-    public interface IMenuProcessesService
+    public interface IAutomatService
     {
         IDataResult<List<MenuType>> GetMenuType();
         IDataResult<List<AutomatItemsDTO>> GetItemsDTO();
+        IDataResult<List<SelectedItemsDTO>> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId);
     }
 }

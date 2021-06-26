@@ -13,6 +13,15 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
     public class EfStudentDal : EfEntityRepositoryBase<Student, BUmatikContext>, IStudentDal
     {
+        public int GetIdByStudent(string bandNumber)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var data = context.Students.Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).FirstOrDefault().Id;
+                return data;
+            }
+        }
+
         public List<StudentDTO> GetStudentDTOs()
         {
             using (BUmatikContext context = new BUmatikContext())

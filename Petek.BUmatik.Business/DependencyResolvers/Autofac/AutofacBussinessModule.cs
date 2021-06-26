@@ -27,8 +27,8 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             builder.RegisterType<ParentManager>().As<IParentService>();
             builder.RegisterType<AdminUserManager>().As<IAdminUserService>();
 
-            builder.RegisterType<MenuProcessesManager>().As<IMenuProcessesService>();
-            builder.RegisterType<EfAutomatItemsDal>().As<IAutomatItemsDal>();
+            builder.RegisterType<AutomatManager>().As<IAutomatService>();
+            builder.RegisterType<EfAutomatDal>().As<IAutomatDal>();
 
             builder.RegisterType<EfParentDal>().As<IParentDal>();
             builder.RegisterType<EfAdminUserDal>().As<IAdminUserDal>();
