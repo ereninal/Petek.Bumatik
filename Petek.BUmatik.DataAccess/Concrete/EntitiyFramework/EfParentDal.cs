@@ -57,6 +57,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 var datas = context.Students.Include(s => s.Schools).Where(m => m.IsDeleted == false && m.ParentId == id).Select(m => new StudentDTO()
                 {
+                    StudentId = m.Id,
                     BandNumber = m.BandNumber,
                     Fullname = m.FullName,
                     RemainingMoney = m.RemainingMoney,
@@ -108,6 +109,23 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     context.SelectedMenuItems.Add(menuItem);
                 }
                 context.SaveChanges();
+            }
+        }
+
+        public List<SelectedMenusDTO> GetSelectedMenusByStudent(int id)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var datas = context.SelectedMenuItems.Include(s => s.Menu).Include(a => a.Student).Where(m => m.IsDeleted == false && m.StudentId == id).Select(m => new SelectedMenusDTO() 
+                {
+                    StudentId = m.StudentId,
+                    BandNumber = m.Student.BandNumber,
+                    Fullname = m.Student.FullName,
+                    CreatedDate = m.CreatedDate,
+                    LastStatus = m.LastStatus ? "Bekliyor" : "Tamamlandı",
+                    MenuType = m.Menu.MenuType.Type
+                }).ToList();
+                return datas;
             }
         }
     }

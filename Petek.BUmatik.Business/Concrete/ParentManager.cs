@@ -57,7 +57,7 @@ namespace Petek.BUmatik.Business.Concrete
         }
         [SecuredOperation("Admin,Member")]
         [ValidationAspect(typeof(StudentValidator))]
-        [CacheRemoveAspect("IUserService.Get")]//herşey interface üzerinden oluyor. Tümü silmek içini tırnak içine Get yazdığımızda tüm get isteklerini siler -Eren
+        [CacheRemoveAspect("IParentService.Get")]//herşey interface üzerinden oluyor. Tümü silmek içini tırnak içine Get yazdığımızda tüm get isteklerini siler -Eren
         public IResult AddStudentByParent(Student student)
         {
             IResult result = BusinessRules.Run(CheckIfStudentBandNumberExists(student.BandNumber));
@@ -67,17 +67,26 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessResult(Messages.StudentAdded);
         }
 
-        //[SecuredOperation("Admin,Member")]
+        [SecuredOperation("Admin,Member")]
         [CacheAspect]
         public IDataResult<SelectedMenuDetailsDTO> GetStudentMenuDetails(int id, int menuTypeId, DateTime useDate)
         {
             return new SuccessDataResult<SelectedMenuDetailsDTO>(_parentDal.GetStudentMenuDetails(id, menuTypeId, useDate), "Menü detayları listelendi.");
         }
-        //[SecuredOperation("Admin,Member")]
+        [SecuredOperation("Admin,Member")]
+        //[ValidationAspect(typeof(StudentValidator))]
+        [CacheRemoveAspect("IParentService.Get")]
         public IResult AddSelectedMenuByStudent(List<SelectedMenuItems> selectedMenuItem)
         {
             _parentDal.StudentMenuDetailsAdd(selectedMenuItem);
             return new SuccessResult(Messages.MenuAdd);
+        }
+        [SecuredOperation("Admin,Member")]
+        [CacheAspect]
+        public IDataResult<List<SelectedMenusDTO>> GetSelectedMenusByStudent(int id)
+        {
+            return new SuccessDataResult<List<SelectedMenusDTO>>(_parentDal.GetSelectedMenusByStudent(id), "Öğrenciye ait tüm menüler detayları listelendi.");
+
         }
         private IResult CheckIfStudentBandNumberExists(string bandNumber)
         {
@@ -88,6 +97,6 @@ namespace Petek.BUmatik.Business.Concrete
             }
             return new SuccessResult();
         }
-        
+
     }
 }

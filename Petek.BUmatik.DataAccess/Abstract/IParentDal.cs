@@ -14,6 +14,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
         List<StudentDTO> GetStudentsByParent(int? id);
 
         SelectedMenuDetailsDTO GetStudentMenuDetails(int id, int menuTypeId,DateTime useDate);
+        List<SelectedMenusDTO> GetSelectedMenusByStudent(int id);
         void StudentMenuDetailsAdd(List<SelectedMenuItems> selectedMenuItem);
         void StudentAdd(Student Add);
         void AdminUserAdd(AdminUser Add);
