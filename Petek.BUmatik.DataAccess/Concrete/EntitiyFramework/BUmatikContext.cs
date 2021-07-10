@@ -40,7 +40,8 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var createdDate = DateTime.Parse("21-04-2021 00:00:00");
+            //var createdDate = DateTime.Parse("21-04-2021 00:00:00");
+            var createdDate = DateTime.Now;
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash("12345aa", out passwordHash, out passwordSalt);
 
