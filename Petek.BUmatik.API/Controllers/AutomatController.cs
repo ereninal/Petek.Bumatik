@@ -28,6 +28,7 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpGet("GetMenuItemsByStudent")]
         public IActionResult GetAutomatItems(string bandNumber,DateTime useDate,int menuTypeId)
         {

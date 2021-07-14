@@ -18,6 +18,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 var datas = context.AutomatItems.Include(s => s.ItemCategory).Include(a=>a.AutomatItemInfo).Where(m => m.IsDeleted == false).Select(m => new AutomatItemsDTO()
                 {
+                    Id = m.Id,
                     Name = m.Name,
                     CategoryName = m.ItemCategory.Name,
                     Description = m.Description,
