@@ -21,6 +21,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     Id = m.Id,
                     Name = m.Name,
                     CategoryName = m.ItemCategory.Name,
+                    ImagePath = m.ImagePath,
                     Description = m.Description,
                     Count = m.AutomatItemInfo.Count,
                     Price = m.Price

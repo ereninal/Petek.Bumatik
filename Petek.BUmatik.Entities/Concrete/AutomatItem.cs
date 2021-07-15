@@ -10,6 +10,7 @@ namespace Petek.BUmatik.Entities.Concrete
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ImagePath { get; set; }
         public decimal Price { get; set; }
         public int ItemCategoryId { get; set; }
         public int AutomatItemInfoId { get; set; }

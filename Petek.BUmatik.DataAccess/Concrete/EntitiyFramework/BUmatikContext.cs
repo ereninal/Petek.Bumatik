@@ -350,13 +350,13 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             var automatItems = new AutomatItem[]
             {
-                new AutomatItem{Id=1,Name="Portakal",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=3,AutomatItemInfoId=1},
-                new AutomatItem{Id=2,Name="Ceviz",Price=5,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=2},
-                new AutomatItem{Id=3,Name="Fındık",Price=7,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=3},
-                new AutomatItem{Id=4,Name="Erikli Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=4},
-                new AutomatItem{Id=5,Name="Damla Su",Price=1,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=5},
-                new AutomatItem{Id=6,Name="Hamidiye Su",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=6},
-                new AutomatItem{Id=7,Name="Sandviç",Price=8,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=2,AutomatItemInfoId=7},
+                new AutomatItem{Id=1,Name="Portakal",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=3,AutomatItemInfoId=1},
+                new AutomatItem{Id=2,Name="Ceviz",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=5,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=2},
+                new AutomatItem{Id=3,Name="Fındık",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=7,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=4,AutomatItemInfoId=3},
+                new AutomatItem{Id=4,Name="Erikli Su",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=4},
+                new AutomatItem{Id=5,Name="Damla Su",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=1,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=5},
+                new AutomatItem{Id=6,Name="Hamidiye Su",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=2,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=1,AutomatItemInfoId=6},
+                new AutomatItem{Id=7,Name="Sandviç",ImagePath="../../../assets/img/automatItems/items-1.jpg",Price=8,CreatedDate=createdDate,IsDeleted=false,CreatedUserId=1,ItemCategoryId=2,AutomatItemInfoId=7},
             };
             modelBuilder.Entity<AutomatItem>().HasData(automatItems);
 
