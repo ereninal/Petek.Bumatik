@@ -22,6 +22,26 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
+        public StudentDTO GetStudentById(int id)
+        {
+            using (BUmatikContext context = new BUmatikContext())
+            {
+                var data = context.Students.Include(s => s.Schools).Where(m => m.IsDeleted == false && m.Id == id).Select(m => new StudentDTO()
+                {
+                    Fullname = m.FullName,
+                    BandNumber = m.BandNumber,
+                    RemainingMoney = m.RemainingMoney,
+                    SchoolName = m.Schools.Name,
+                    CreatedDate = m.CreatedDate,
+                    ModifiedDate = m.ModifiedDate
+
+                }).FirstOrDefault();
+                //StudentDTO student = new StudentDTO();
+                //student.BandNumber = data.;
+                return data;
+            }
+        }
+
         public List<StudentDTO> GetStudentDTOs()
         {
             using (BUmatikContext context = new BUmatikContext())

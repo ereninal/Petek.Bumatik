@@ -9,6 +9,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
     public interface IAutomatDal
     {
         List<AutomatItemsDTO> GetAutomatItemsDTOs();
+        List<MenuTypeDTO> GetMenuTypeDTOs();
         List<SelectedItemsDTO> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId);
         void ItemAdd(AutomatItem item);
     }

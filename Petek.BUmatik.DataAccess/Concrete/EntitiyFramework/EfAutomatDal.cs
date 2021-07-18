@@ -45,6 +45,23 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
+        public List<MenuTypeDTO> GetMenuTypeDTOs()
+        {
+            using (var context = new BUmatikContext())
+            {
+                var datas = context.MenuTypes.Where(m => m.IsDeleted == false).Select(m => new MenuTypeDTO()
+                {
+                    Id = m.Id,
+                    Type = m.Type,
+                    StartDate = m.StartDate.ToString(),
+                    FinishDate = m.FinishDate.ToString(),
+
+
+                }).ToList();
+                return datas;
+            }
+        }
+
         public void ItemAdd(AutomatItem item)
         {
             using (var context = new BUmatikContext())

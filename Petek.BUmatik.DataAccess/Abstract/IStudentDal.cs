@@ -11,6 +11,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
     {
         List<StudentDTO> GetStudentSummary();
         List<StudentDTO> GetStudentDTOs();
+        StudentDTO GetStudentById(int id);
 
     }
 }

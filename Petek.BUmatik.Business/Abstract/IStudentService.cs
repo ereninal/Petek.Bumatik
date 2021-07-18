@@ -9,7 +9,7 @@ namespace Petek.BUmatik.Business.Abstract
 {
     public interface IStudentService
     {
-        IDataResult<Student> GetStudentById(int studentId);
+        IDataResult<StudentDTO> GetStudentById(int studentId);
         IDataResult<List<StudentDTO>> GetAllStudents();
         IResult Add(Student student);
         IDataResult<List<Student>> GetAllStudentsDetails();

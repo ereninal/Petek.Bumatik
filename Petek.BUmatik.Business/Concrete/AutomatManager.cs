@@ -30,7 +30,7 @@ namespace Petek.BUmatik.Business.Concrete
         {
             return new SuccessDataResult<List<AutomatItemsDTO>>(_automatDal.GetAutomatItemsDTOs(), "Automatın içindekiler listelendi.");
         }
-        //[SecuredOperation("Admin,Member")]
+        [SecuredOperation("Admin,Member")]
         [CacheAspect]
         public IDataResult<List<SelectedItemsDTO>> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId)
         {
@@ -39,11 +39,12 @@ namespace Petek.BUmatik.Business.Concrete
                 return new ErrorDataResult<List<SelectedItemsDTO>>(result.Message);
             return new SuccessDataResult<List<SelectedItemsDTO>>(_automatDal.GetMenuItemsByStudent(bandNumber, useDate, menuTypeId), "Öğrencinin öğün bilgisi listelendi.");
         }
-
-        public IDataResult<List<MenuType>> GetMenuType()
+        [SecuredOperation("Admin,Member")]
+        public IDataResult<List<MenuTypeDTO>> GetMenuTypeDTO()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<MenuTypeDTO>>(_automatDal.GetMenuTypeDTOs(), "Menü tipleri listelendi.");
         }
+
         private IResult CheckIfStudentBandNumberExists(string bandNumber)
         {
             var result = _studentDal.GetAll(p => p.BandNumber == bandNumber && p.IsDeleted == false).Any();

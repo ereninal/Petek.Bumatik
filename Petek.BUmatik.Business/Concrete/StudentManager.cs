@@ -58,9 +58,9 @@ namespace Petek.BUmatik.Business.Concrete
         }
 
         [SecuredOperation("Member")]
-        public IDataResult<Student> GetStudentById(int studentId)
+        public IDataResult<StudentDTO> GetStudentById(int studentId)
         {
-            return new SuccessDataResult<Student>(_studentDal.Get(m => m.IsDeleted != true && m.Id == studentId), "Öğrenci listelendi.");
+            return new SuccessDataResult<StudentDTO>(_studentDal.GetStudentById(studentId), "Öğrenci listelendi.");
         }
 
         [CacheAspect]
