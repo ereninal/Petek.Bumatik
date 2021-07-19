@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="CrossCuttingConcerns\Caching\Elastic\" />
-    <Folder Include="CrossCuttingConcerns\Caching\Redis\" />
   </ItemGroup>
 
 </Project>

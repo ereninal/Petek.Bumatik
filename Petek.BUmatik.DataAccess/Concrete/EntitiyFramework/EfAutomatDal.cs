@@ -44,7 +44,6 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 return datas;
             }
         }
-
         public List<MenuTypeDTO> GetMenuTypeDTOs()
         {
             using (var context = new BUmatikContext())
@@ -61,7 +60,6 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 return datas;
             }
         }
-
         public void ItemAdd(AutomatItem item)
         {
             using (var context = new BUmatikContext())
