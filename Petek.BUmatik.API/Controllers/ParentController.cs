@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Entities.Concrete;
+using Petek.BUmatik.Shared.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,7 @@ namespace Petek.BUmatik.API.Controllers
             return BadRequest(result);
         }
         [HttpPost("AddSelectedMenuByStudent")]
-        public IActionResult AddSelectedMenuByStudent(List<SelectedMenuItems> selectedMenuItems)
+        public IActionResult AddSelectedMenuByStudent(SelectedMenuItemDTO selectedMenuItems)
         {
             var result = _userService.AddSelectedMenuByStudent(selectedMenuItems);
             if (result.Success)

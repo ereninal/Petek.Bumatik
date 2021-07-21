@@ -93,19 +93,14 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
-        public void StudentMenuDetailsAdd(List<SelectedMenuItems> selectedMenuItem)
+        public void StudentMenuDetailsAdd(SelectedMenuItemDTO selectedMenuItems)
         {
             using (var context = new BUmatikContext())
             {
-                foreach (var menuItem in selectedMenuItem)
+                foreach (var menuItem in selectedMenuItems.selectedMenuItems)
                 {
-                    //var menuItem = new SelectedMenuItems();
-                    //menuItem.StudentId = item.StudentId;
-                    //menuItem.MenuId = item.MenuId;
-                    //menuItem.LastStatus = false;
-                    //menuItem.Count = item.Count;
-                    //menuItem.AutomatItemId = 1;
-                    //menuItem.UseDate = item.UseDate;
+                    menuItem.LastStatus = true;
+                    menuItem.StudentId = selectedMenuItems.StudentId;
                     context.SelectedMenuItems.Add(menuItem);
                 }
                 context.SaveChanges();

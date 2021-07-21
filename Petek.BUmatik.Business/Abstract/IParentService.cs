@@ -18,7 +18,7 @@ namespace Petek.BUmatik.Business.Abstract
         IDataResult<List<SelectedMenusDTO>> GetSelectedMenusByStudent(int id);
         Parent GetByMail(string email);
         IResult AddStudentByParent(Student student);
-        IResult AddSelectedMenuByStudent(List<SelectedMenuItems> selectedMenuItem);
+        IResult AddSelectedMenuByStudent(SelectedMenuItemDTO selectedMenuItems);
 
 
 
