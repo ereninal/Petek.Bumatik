@@ -104,6 +104,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     newData.StudentId = selectedMenuItems.StudentId;
                     newData.MenuId = selectedMenuItems.MenuTypeId;
                     newData.Count = menuItem.Count;
+                    newData.UseDate = selectedMenuItems.UseDate.Date;
                     newData.AutomatItemId = menuItem.ItemId;
                     context.SelectedMenuItems.Add(newData);
                 }
@@ -125,6 +126,33 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     MenuType = m.Menu.MenuType.Type
                 }).ToList();
                 return datas;
+            }
+        }
+
+        public List<StudentMenusDTO> GetAllSelectedMenusByStudent(int id)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var datas = context.SelectedMenuItems.Select(m=> new { m.UseDate,m.StudentId,m.Menu,m.MenuId,m.IsDeleted,m.CreatedDate}).Where(m => m.IsDeleted == false && m.StudentId == id).GroupBy(m=> new { m.MenuId,m.UseDate}).Select(m => new StudentMenusDTO()
+                {
+                    StudentId = id,
+                    MenuTypeId = m.Key.MenuId,
+                    MenuType = m.Key.MenuId == 1 ? "Sabah" : "Akşam",
+                    UseDate = m.Key.UseDate.ToShortDateString(),
+                    CreatedDate = GetCreatedDateByMenu(id,m.Key.MenuId,m.Key.UseDate),
+                    SelectedItemCount = m.Count()
+
+                }).ToList();
+                return datas;
+            }
+        }
+
+        private static string GetCreatedDateByMenu(int studentId,int menuTypeId,DateTime useDate)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var createdDate = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId,m.StudentId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m=>m.CreatedDate).FirstOrDefault();
+                return createdDate.ToShortDateString();
             }
         }
     }

@@ -81,11 +81,18 @@ namespace Petek.BUmatik.Business.Concrete
             _parentDal.StudentMenuDetailsAdd(selectedMenuItems);
             return new SuccessResult(Messages.MenuAdd);
         }
-        [SecuredOperation("Admin,Member")]
+        //[SecuredOperation("Admin,Member")]
         [CacheAspect]
         public IDataResult<List<SelectedMenusDTO>> GetSelectedMenusByStudent(int id)
         {
             return new SuccessDataResult<List<SelectedMenusDTO>>(_parentDal.GetSelectedMenusByStudent(id), "Öğrenciye ait tüm menüler detayları listelendi.");
+
+        }
+        //[SecuredOperation("Admin,Member")]
+        [CacheAspect]
+        public IDataResult<List<StudentMenusDTO>> GetAllSelectedMenusByStudent(int id)
+        {
+            return new SuccessDataResult<List<StudentMenusDTO>>(_parentDal.GetAllSelectedMenusByStudent(id), "Öğrenciye ait tüm menüler detayları listelendi.");
 
         }
         private IResult CheckIfStudentBandNumberExists(string bandNumber)

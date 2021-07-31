@@ -9,7 +9,6 @@ namespace Petek.BUmatik.Shared.DTOs
         public int StudentId { get; set; }
         public string Fullname { get; set; }
         public string BandNumber { get; set; }
-
         public string MenuType { get; set; }
         public string LastStatus { get; set; }
         public DateTime CreatedDate { get; set; }
