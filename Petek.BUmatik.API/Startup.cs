@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Business.Concrete;
 using Petek.BUmatik.Core.DependencyResolvers;
@@ -43,6 +44,11 @@ namespace Petek.BUmatik.API
 
             services.AddCors();//Front-End gelen isteklere izin verdik.-Eren
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Petek.BUmatik.OtomatAPI", Version = "v1" });
+            });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -70,6 +76,8 @@ namespace Petek.BUmatik.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Petek.BUmatik.API v1"));
 
             app.ConfigureCustomExceptionMiddleware();
 
