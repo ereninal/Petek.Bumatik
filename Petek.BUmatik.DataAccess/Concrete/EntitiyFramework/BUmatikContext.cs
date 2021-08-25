@@ -15,7 +15,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(PostgreDb.ConnectionStringLocal);
+            optionsBuilder.UseNpgsql(PostgreDb.ConnectionStringTest);
         }
 
         #region Model

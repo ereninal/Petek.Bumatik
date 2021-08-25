@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Petek.BUmatik.Business.Abstract;
 using Petek.BUmatik.Shared.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Petek.BUmatik.API.Controllers
 {
