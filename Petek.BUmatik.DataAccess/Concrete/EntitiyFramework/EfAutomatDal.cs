@@ -16,7 +16,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.AutomatItems.Include(s => s.ItemCategory).Include(a=>a.AutomatItemInfo).Where(m => m.IsDeleted == false).Select(m => new AutomatItemsDTO()
+                var datas = context.AutomatItems.Include(s => s.ItemCategory).Include(a => a.AutomatItemInfo).Where(m => m.IsDeleted == false).Select(m => new AutomatItemsDTO()
                 {
                     Id = m.Id,
                     Name = m.Name,
@@ -30,12 +30,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
-        public List<SelectedItemsDTO> GetMenuItemsByStudent(string bandNumber, DateTime useDate,int menuTypeId)
+        public List<SelectedItemsDTO> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId)
         {
             using (var context = new BUmatikContext())
             {
                 var studentId = context.Students.Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).FirstOrDefault().Id;
-                var datas = context.SelectedMenuItems.Include(s => s.AutomatItem).Include(s=>s.Student).Where(m => m.IsDeleted == false && m.LastStatus == true && m.UseDate == useDate && m.Student.BandNumber == bandNumber && m.MenuId == menuTypeId).Select(m => new SelectedItemsDTO() 
+                var datas = context.SelectedMenuItems.Include(s => s.AutomatItem).Include(s => s.Student).Where(m => m.IsDeleted == false && m.LastStatus == true && m.UseDate == useDate && m.Student.BandNumber == bandNumber && m.MenuId == menuTypeId).Select(m => new SelectedItemsDTO()
                 {
                     ProductId = m.AutomatItem.Id,
                     ProductName = m.AutomatItem.Name
@@ -60,6 +60,37 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 return datas;
             }
         }
+
+        public SelectedMenuDetailsDTO GetStudentMenuDetailsByBandNumber(string bandNumber)
+        {
+
+            var currentUseTime = DateTime.Now.AddHours(-12);
+            var useTime = new TimeSpan(currentUseTime.Hour, currentUseTime.Minute, currentUseTime.Second);
+            //if(date >= DateTime.)
+            using (var context = new BUmatikContext())
+            {
+                var menuTypeId = 3;
+                var startMorningDate = context.MenuTypes.Where(m => m.Id == 1).Select(m => m.StartDate).FirstOrDefault();
+                var finishMorningDate = context.MenuTypes.Where(m => m.Id == 1).Select(m => m.FinishDate).FirstOrDefault();
+                var StartNoonDate = context.MenuTypes.Where(m => m.Id == 2).Select(m => m.StartDate).FirstOrDefault();
+                var finishNoonDate = context.MenuTypes.Where(m => m.Id == 2).Select(m => m.FinishDate).FirstOrDefault();
+                if (useTime >= StartNoonDate && useTime <= finishNoonDate)
+                    menuTypeId = 2;
+                else if (useTime >= startMorningDate && useTime <= finishMorningDate)
+                    menuTypeId = 1;
+                
+
+                var data = context.Students.Include(s => s.SelectedMenuItems).Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).Select(m => new SelectedMenuDetailsDTO()
+                {
+                    BandNumber = m.BandNumber,
+                    StudentName = m.FullName,
+                    MenuItems = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == DateTime.Today).ToList()
+
+                }).FirstOrDefault();
+                return data;
+            }
+        }
+
         public void ItemAdd(AutomatItem item)
         {
             using (var context = new BUmatikContext())

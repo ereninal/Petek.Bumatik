@@ -44,9 +44,15 @@ namespace Petek.BUmatik.Business.Concrete
         {
             return new SuccessDataResult<List<MenuTypeDTO>>(_automatDal.GetMenuTypeDTOs(), "Menü tipleri listelendi.");
         }
+        [CacheAspect]
+        public IDataResult<SelectedMenuDetailsDTO> GetStudentMenuDetailsByBandNumber(string bandNumber)
+        {
+            return new SuccessDataResult<SelectedMenuDetailsDTO>(_automatDal.GetStudentMenuDetailsByBandNumber(bandNumber), "Öğün bilgisi listelendi.");
+
+        }
 
         private IResult CheckIfStudentBandNumberExists(string bandNumber)
-        {
+        {   
             var result = _studentDal.GetAll(p => p.BandNumber == bandNumber && p.IsDeleted == false).Any();
             if (!result)
             {

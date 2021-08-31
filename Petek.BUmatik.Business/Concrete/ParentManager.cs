@@ -76,6 +76,7 @@ namespace Petek.BUmatik.Business.Concrete
         //[SecuredOperation("Admin,Member")]
         //[ValidationAspect(typeof(StudentValidator))]
         [CacheRemoveAspect("IParentService.Get")]
+        [CacheRemoveAspect("IAutomatDal.Get")]
         public IResult AddSelectedMenuByStudent(SelectedMenuItemDTO selectedMenuItems)
         {
             _parentDal.StudentMenuDetailsAdd(selectedMenuItems);

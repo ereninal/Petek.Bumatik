@@ -11,6 +11,8 @@ namespace Petek.BUmatik.DataAccess.Abstract
         List<AutomatItemsDTO> GetAutomatItemsDTOs();
         List<MenuTypeDTO> GetMenuTypeDTOs();
         List<SelectedItemsDTO> GetMenuItemsByStudent(string bandNumber, DateTime useDate, int menuTypeId);
+        SelectedMenuDetailsDTO GetStudentMenuDetailsByBandNumber(string bandNumber);
+
         void ItemAdd(AutomatItem item);
     }
 }

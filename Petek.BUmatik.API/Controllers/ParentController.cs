@@ -100,6 +100,14 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("test")]
+        public IActionResult Test(string bandNumber)
+        {
+            var result = new List<String>(){"14","53","18","81" };
+            
+            return Ok(result);
+            
+        }
         //[HttpPost("SetMenuByNumber")]
         //public IActionResult GetStudentByParent()
         //{

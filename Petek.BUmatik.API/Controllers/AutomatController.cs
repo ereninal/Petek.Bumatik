@@ -13,6 +13,7 @@ namespace Petek.BUmatik.API.Controllers
     public class AutomatController : ControllerBase
     {
         IAutomatService _automatService;
+        
         public AutomatController(IAutomatService automatService)
         {
             _automatService = automatService;
@@ -44,6 +45,16 @@ namespace Petek.BUmatik.API.Controllers
         public IActionResult GetAutomatItems(string bandNumber,DateTime useDate,int menuTypeId)
         {
             var result = _automatService.GetMenuItemsByStudent(bandNumber, useDate,menuTypeId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("GetStudentMenuDetailsByBandNumber")]
+        public IActionResult GetStudentMenuDetailsByBandNumber(string bandNumber)
+        {
+            var result = _automatService.GetStudentMenuDetailsByBandNumber(bandNumber);
             if (result.Success)
             {
                 return Ok(result);
