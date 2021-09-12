@@ -64,7 +64,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public SelectedMenuDetailsDTO GetStudentMenuDetailsByBandNumber(string bandNumber)
         {
 
-            var currentUseTime = DateTime.Now.AddHours(-12);
+            var currentUseTime = DateTime.Now;
             var useTime = new TimeSpan(currentUseTime.Hour, currentUseTime.Minute, currentUseTime.Second);
             //if(date >= DateTime.)
             using (var context = new BUmatikContext())

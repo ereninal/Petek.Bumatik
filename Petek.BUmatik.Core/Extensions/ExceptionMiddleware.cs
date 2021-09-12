@@ -50,7 +50,14 @@ namespace Petek.BUmatik.Core.Extensions
 
 
             }
-
+            else if (e.Message == "Yetkiniz yok.")
+            {
+                return httpContext.Response.WriteAsync(new ValidationErrorDetails
+                {
+                    StatusCode = 401,
+                    Message = e.Message,
+                }.ToString());
+            }
             return httpContext.Response.WriteAsync(new ErrorDetails
             {
                 StatusCode = httpContext.Response.StatusCode,
