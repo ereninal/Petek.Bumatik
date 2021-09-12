@@ -8,6 +8,7 @@ using Petek.BUmatik.Business.Concrete;
 using Petek.BUmatik.Core.Utilities.Interceptors;
 using Petek.BUmatik.Core.Utilities.Security.JWT;
 using Petek.BUmatik.DataAccess.Abstract;
+using Petek.BUmatik.DataAccess.Concrete;
 using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 using Petek.BUmatik.Entities.Concrete;
 using Petek.BUmatik.Shared.DTOs;
@@ -32,6 +33,9 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
 
             builder.RegisterType<EfParentDal>().As<IParentDal>();
             builder.RegisterType<EfAdminUserDal>().As<IAdminUserDal>();
+
+            builder.RegisterType<EfSchoolDal>().As<ISchoolDal>();
+            builder.RegisterType<SchoolManager>().As<ISchoolService>();
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();

@@ -6,14 +6,12 @@ namespace Petek.BUmatik.Shared.DTOs
 {
     public class SchoolDTO
     {
+        public int Id { get; set; }
         public string SchoolName{ get; set; }
+        public int CountryId { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public List<StudentDTO> Students { get; set; }
-
-        public SchoolDTO()
-        {
-            Students = new List<StudentDTO>();
-        }
+       
 
     }
 }

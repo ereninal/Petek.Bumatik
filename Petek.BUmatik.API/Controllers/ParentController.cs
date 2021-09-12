@@ -20,7 +20,7 @@ namespace Petek.BUmatik.API.Controllers
             _userService = userService;
         }
         [HttpGet("GetParents")]
-        public IActionResult GetSchools()
+        public IActionResult GetParents()
         {
             var result = _userService.GetParentDTOs();
             if (result.Success)

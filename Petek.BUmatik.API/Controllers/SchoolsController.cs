@@ -22,7 +22,7 @@ namespace Petek.BUmatik.API.Controllers
         [HttpGet("GetSchools")]
         public IActionResult GetSchools()
         {
-            var result = _schoolService.GetAllSchoolsDetails();
+            var result = _schoolService.GetAllSchools();
             if (result.Success)
             {
                 return Ok(result);

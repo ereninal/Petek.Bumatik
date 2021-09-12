@@ -10,8 +10,8 @@ namespace Petek.BUmatik.Business.Abstract
     public interface ISchoolService
     {
         IDataResult<School> GetStudentById(int schoolId);
-        IDataResult<List<SchoolDTO>> GetAllSchools();
+        IDataResult<List<SchoolDTO>> GetAllSchoolsDetails();
         IResult Add(School school);
-        IDataResult<List<School>> GetAllSchoolsDetails();
+        IDataResult<List<SchoolDTO>> GetAllSchools();
     }
 }
