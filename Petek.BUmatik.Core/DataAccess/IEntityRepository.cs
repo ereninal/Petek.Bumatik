@@ -12,6 +12,7 @@ namespace Petek.BUmatik.Core.DataAccess
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+        int GetCount(Expression<Func<T, bool>> filter = null);
 
     }
 }

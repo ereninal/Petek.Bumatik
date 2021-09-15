@@ -59,5 +59,14 @@ namespace Petek.BUmatik.Core.DataAccess.EntitiyFramework
             }
         }
 
+        public int GetCount(Expression<Func<TEntity, bool>> filter = null)
+        {
+            using (TContext context = new TContext())
+            {
+                return filter == null
+                    ? context.Set<TEntity>().Count()
+                    : context.Set<TEntity>().Where(filter).Count();
+            }
+        }
     }
 }

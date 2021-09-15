@@ -19,5 +19,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
         void StudentMenuDetailsAdd(SelectedMenuItemDTO selectedMenuItems);
         void StudentAdd(Student Add);
         void AdminUserAdd(AdminUser Add);
+        int GetActiveMenuCount(int parentId);
+        int GetTotalOrderCount(int parentId);
     }
 }

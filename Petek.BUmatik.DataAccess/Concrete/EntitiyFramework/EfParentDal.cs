@@ -133,12 +133,13 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.SelectedMenuItems.Select(m=> new { m.UseDate,m.StudentId,m.Menu,m.MenuId,m.IsDeleted,m.CreatedDate}).Where(m => m.IsDeleted == false && m.StudentId == id).GroupBy(m=> new { m.MenuId,m.UseDate}).Select(m => new StudentMenusDTO()
+                var datas = context.SelectedMenuItems.Select(m=> new { m.UseDate,m.StudentId,m.Menu,m.MenuId,m.IsDeleted,m.CreatedDate,m.LastStatus}).Where(m => m.IsDeleted == false && m.StudentId == id).GroupBy(m=> new { m.MenuId,m.UseDate,m.LastStatus}).Select(m => new StudentMenusDTO()
                 {
                     StudentId = id,
                     MenuTypeId = m.Key.MenuId,
                     MenuType = m.Key.MenuId == 1 ? "Sabah" : "Akşam",
                     UseDate = m.Key.UseDate.ToShortDateString(),
+                    LastStatus = m.Key.LastStatus,
                     CreatedDate = GetCreatedDateByMenu(id,m.Key.MenuId,m.Key.UseDate),
                     SelectedItemCount = m.Count()
 
@@ -153,6 +154,37 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 var createdDate = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId,m.StudentId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m=>m.CreatedDate).FirstOrDefault();
                 return createdDate.ToShortDateString();
+            }
+        }
+
+        public int GetActiveMenuCount(int parentId)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var data = 0;
+                var studentIds = context.Students.Where(m => m.IsDeleted == false && m.ParentId == parentId).Select(m => m.Id).ToList();
+                foreach (var item in studentIds)
+                {
+                    data += context.SelectedMenuItems.Select(m => new { m.UseDate, m.StudentId, m.Menu, m.MenuId, m.IsDeleted, m.CreatedDate,m.LastStatus }).Where(m => m.IsDeleted == false && m.StudentId == item && m.LastStatus == true).GroupBy(m => new { m.MenuId, m.UseDate }).Count();
+
+                }
+                return data;
+
+            }
+        }
+        public int GetTotalOrderCount(int parentId)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var data = 0;
+                var studentIds = context.Students.Where(m => m.IsDeleted == false && m.ParentId == parentId).Select(m => m.Id).ToList();
+                foreach (var item in studentIds)
+                {
+                    data += context.SelectedMenuItems.Select(m => new { m.UseDate, m.StudentId, m.Menu, m.MenuId, m.IsDeleted, m.CreatedDate, m.LastStatus }).Where(m => m.IsDeleted == false && m.StudentId == item).GroupBy(m => new { m.MenuId, m.UseDate }).Count();
+
+                }
+                return data;
+
             }
         }
     }
