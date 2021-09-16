@@ -35,6 +35,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public DbSet<MenuType> MenuTypes{ get; set; }
         public DbSet<Menu> Menus{ get; set; }
         public DbSet<StudentMenu> StudentMenus{ get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         #endregion
 
@@ -386,6 +387,21 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 new SelectedMenuItems{Id=6,MenuId=2,AutomatItemId=3,Count=1,UseDate = new DateTime(2021,06,25).Date,IsDeleted=false,LastStatus=true,CreatedDate=createdDate,CreatedUserId=1,StudentId=1},
             };
             modelBuilder.Entity<SelectedMenuItems>().HasData(selectedMenuItems);
+
+            #endregion
+
+            #region Transactions
+
+            var transactions = new Transaction[]
+            {
+                new Transaction{Id=1,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =1},
+                new Transaction{Id=2,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2},
+                new Transaction{Id=3,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=3,CreatedUserId =1,MenuTypeId =1},
+                new Transaction{Id=4,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=4,CreatedUserId =1,MenuTypeId =2},
+                new Transaction{Id=5,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =2},
+                new Transaction{Id=6,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2},
+            };
+            modelBuilder.Entity<Transaction>().HasData(transactions);
 
             #endregion
 

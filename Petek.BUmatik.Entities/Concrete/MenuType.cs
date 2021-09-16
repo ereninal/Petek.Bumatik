@@ -13,6 +13,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public TimeSpan StartDate { get; set; }
         public TimeSpan FinishDate { get; set; }
         public virtual ICollection<Menu> Menus{ get; set; }
+        public virtual ICollection<Transaction> Transactions{ get; set; }
 
     }
     public class MenuTypeConfiguration : IEntityTypeConfiguration<MenuType>
@@ -20,6 +21,11 @@ namespace Petek.BUmatik.Entities.Concrete
         public void Configure(EntityTypeBuilder<MenuType> builder)
         {
             builder.HasMany(m => m.Menus)
+               .WithOne(e => e.MenuType)
+               .HasForeignKey(e => e.MenuTypeId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasMany(m => m.Transactions)
                .WithOne(e => e.MenuType)
                .HasForeignKey(e => e.MenuTypeId)
                .OnDelete(DeleteBehavior.Restrict);

@@ -16,6 +16,7 @@ namespace Petek.BUmatik.Entities.Concrete
 
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<UserOperationClaim> OperationClaims { get; set; }
+        public virtual ICollection<Transaction> Transactions { get; set; }
 
 
     }
@@ -32,6 +33,11 @@ namespace Petek.BUmatik.Entities.Concrete
                 .WithOne(e => e.Parents)
                 .HasForeignKey(e => e.ParentId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasMany(m => m.Transactions)
+               .WithOne(e => e.Parent)
+               .HasForeignKey(e => e.ParentId)
+               .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

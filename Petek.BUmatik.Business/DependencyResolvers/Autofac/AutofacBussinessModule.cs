@@ -37,6 +37,9 @@ namespace Petek.BUmatik.Business.DependencyResolvers.Autofac
             builder.RegisterType<EfSchoolDal>().As<ISchoolDal>();
             builder.RegisterType<SchoolManager>().As<ISchoolService>();
 
+            builder.RegisterType<EfTransactionDal>().As<ITransactionDal>();
+            builder.RegisterType<TransactionManager>().As<ITransactionService>();
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
