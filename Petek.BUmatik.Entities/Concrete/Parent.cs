@@ -10,6 +10,7 @@ namespace Petek.BUmatik.Entities.Concrete
     {
         public string FullName { get; set; }
         public string Email { get; set; }
+        public string Avatar { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public virtual AdminUser AdminUser { get; set; }

@@ -9,7 +9,7 @@ namespace Petek.BUmatik.DataAccess.Abstract
 {
     public interface ITransactionDal : IEntityRepository<Transaction>
     {
-        List<TransactionDataDTO> GetTransactionData(int parentId);
+        TransactionDataDTO GetTransactionData(int parentId);
 
     }
 }

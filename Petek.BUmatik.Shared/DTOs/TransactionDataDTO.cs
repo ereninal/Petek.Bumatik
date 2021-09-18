@@ -6,7 +6,14 @@ namespace Petek.BUmatik.Shared.DTOs
 {
     public class TransactionDataDTO
     {
-        public string  StudentName { get; set; }
-        public DateTime  UseDate{ get; set; }
+        public List<string> StudentNames { get; set; }
+        public List<DateTime> UseDates { get; set; }
+        public List<int> ItemCount { get; set; }
+        public TransactionDataDTO()
+        {
+            StudentNames = new List<string>();
+            UseDates = new List<DateTime>();
+            ItemCount = new List<int>();
+        }
     }
 }

@@ -44,7 +44,9 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     Email = m.Email,
                     Fullname = m.FullName,
                     PasswordHash = m.PasswordHash,
-                    PasswordSalt = m.PasswordSalt
+                    PasswordSalt = m.PasswordSalt,
+                    Avatar = m.Avatar
+                    
                 }).ToList();
 
                 return datas;

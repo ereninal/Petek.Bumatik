@@ -64,9 +64,8 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public SelectedMenuDetailsDTO GetStudentMenuDetailsByBandNumber(string bandNumber)
         {
 
-            var currentUseTime = DateTime.Now;
+            var currentUseTime = DateTime.Now.AddSeconds(-1440);
             var useTime = new TimeSpan(currentUseTime.Hour, currentUseTime.Minute, currentUseTime.Second);
-            //if(date >= DateTime.)
             using (var context = new BUmatikContext())
             {
                 var menuTypeId = 3;
@@ -84,13 +83,33 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 {
                     BandNumber = m.BandNumber,
                     StudentName = m.FullName,
-                    MenuItems = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == DateTime.Today).ToList()
+                    MenuItems = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == DateTime.Today && s.LastStatus == true).ToList()
 
                 }).FirstOrDefault();
+                if(data.MenuItems.Count > 0)
+                    MenuPassiveProcess(data);
                 return data;
             }
         }
+        public bool MenuPassiveProcess(SelectedMenuDetailsDTO selectedMenuDetailsDTO)
+        {
 
+            using (var context = new BUmatikContext())
+            {
+                var studentId = context.Students.FirstOrDefault(m => m.IsDeleted == false && m.BandNumber == selectedMenuDetailsDTO.BandNumber).Id;
+                var updateData = context.SelectedMenuItems.Where(m => m.LastStatus == true && m.MenuId == selectedMenuDetailsDTO.MenuItems.FirstOrDefault().MenuId && m.StudentId == selectedMenuDetailsDTO.MenuItems.FirstOrDefault().StudentId && m.UseDate == selectedMenuDetailsDTO.MenuItems.FirstOrDefault().UseDate).ToList();
+                foreach (var item in updateData)
+                {
+                    item.LastStatus = false;
+                    item.ModifiedDate = DateTime.Now;
+                    var updatedEntity = context.Entry(item);
+                    updatedEntity.State = EntityState.Modified;
+                }
+                
+                context.SaveChanges();
+            }
+            return false;
+        }
         public void ItemAdd(AutomatItem item)
         {
             using (var context = new BUmatikContext())

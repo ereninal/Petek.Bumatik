@@ -11,6 +11,7 @@ namespace Petek.BUmatik.Entities.Concrete
         public int StudentId { get; set; }
         public int ParentId { get; set; }
         public int MenuTypeId { get; set; }
+        public int ItemCount { get; set; }
         public Student Student { get; set; }
         public Parent Parent{ get; set; }
         public MenuType MenuType{ get; set; }

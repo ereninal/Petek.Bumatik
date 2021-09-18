@@ -8,6 +8,6 @@ namespace Petek.BUmatik.Business.Abstract
 {
     public interface ITransactionService
     {
-        IDataResult<List<TransactionDataDTO>> GetTransactionData(int parentId);
+        IDataResult<TransactionDataDTO> GetTransactionData(int parentId);
     }
 }

@@ -15,9 +15,9 @@ namespace Petek.BUmatik.Business.Concrete
         {
             _transactionDal = transactionDal;
         }
-        public IDataResult<List<TransactionDataDTO>> GetTransactionData(int parentId)
+        public IDataResult<TransactionDataDTO> GetTransactionData(int parentId)
         {
-            return new SuccessDataResult<List<TransactionDataDTO>>(_transactionDal.GetTransactionData(parentId), "Transaction Widget dataları listelendi.");
+            return new SuccessDataResult<TransactionDataDTO>(_transactionDal.GetTransactionData(parentId), "Transaction Widget dataları listelendi.");
         }
     }
 }

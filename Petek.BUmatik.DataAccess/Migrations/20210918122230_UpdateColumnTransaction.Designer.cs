@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
@@ -9,9 +10,10 @@ using Petek.BUmatik.DataAccess.Concrete.EntitiyFramework;
 namespace Petek.BUmatik.DataAccess.Migrations
 {
     [DbContext(typeof(BUmatikContext))]
-    partial class BUmatikContextModelSnapshot : ModelSnapshot
+    [Migration("20210918122230_UpdateColumnTransaction")]
+    partial class UpdateColumnTransaction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,42 +63,42 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Email = "eren@petek.com",
                             FullName = "Eren İnal",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
+                            PasswordHash = new byte[] { 92, 40, 39, 169, 19, 183, 42, 201, 41, 151, 203, 221, 34, 254, 123, 200, 182, 5, 108, 217, 60, 40, 248, 52, 162, 30, 178, 228, 202, 182, 165, 117, 193, 234, 45, 178, 126, 15, 78, 84, 64, 230, 50, 123, 173, 122, 198, 91, 251, 36, 170, 228, 93, 1, 148, 165, 132, 74, 234, 227, 158, 72, 79, 162 },
+                            PasswordSalt = new byte[] { 194, 36, 130, 175, 23, 161, 32, 212, 221, 160, 137, 104, 167, 245, 71, 187, 73, 5, 50, 116, 18, 55, 1, 20, 119, 64, 127, 64, 191, 182, 249, 6, 210, 177, 14, 125, 13, 71, 144, 157, 42, 51, 199, 71, 147, 157, 207, 224, 76, 110, 235, 128, 213, 195, 171, 228, 229, 209, 18, 246, 190, 222, 235, 174, 209, 100, 202, 162, 24, 135, 190, 221, 210, 137, 129, 10, 15, 150, 178, 113, 48, 153, 81, 110, 76, 91, 230, 208, 195, 97, 218, 188, 212, 35, 237, 7, 110, 103, 205, 202, 73, 167, 105, 168, 172, 83, 42, 109, 65, 182, 210, 148, 247, 41, 68, 140, 140, 105, 74, 227, 243, 131, 185, 182, 157, 158, 209, 62 }
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Email = "pelinsu@petek.com",
                             FullName = "Peinsu Baltacı",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
+                            PasswordHash = new byte[] { 92, 40, 39, 169, 19, 183, 42, 201, 41, 151, 203, 221, 34, 254, 123, 200, 182, 5, 108, 217, 60, 40, 248, 52, 162, 30, 178, 228, 202, 182, 165, 117, 193, 234, 45, 178, 126, 15, 78, 84, 64, 230, 50, 123, 173, 122, 198, 91, 251, 36, 170, 228, 93, 1, 148, 165, 132, 74, 234, 227, 158, 72, 79, 162 },
+                            PasswordSalt = new byte[] { 194, 36, 130, 175, 23, 161, 32, 212, 221, 160, 137, 104, 167, 245, 71, 187, 73, 5, 50, 116, 18, 55, 1, 20, 119, 64, 127, 64, 191, 182, 249, 6, 210, 177, 14, 125, 13, 71, 144, 157, 42, 51, 199, 71, 147, 157, 207, 224, 76, 110, 235, 128, 213, 195, 171, 228, 229, 209, 18, 246, 190, 222, 235, 174, 209, 100, 202, 162, 24, 135, 190, 221, 210, 137, 129, 10, 15, 150, 178, 113, 48, 153, 81, 110, 76, 91, 230, 208, 195, 97, 218, 188, 212, 35, 237, 7, 110, 103, 205, 202, 73, 167, 105, 168, 172, 83, 42, 109, 65, 182, 210, 148, 247, 41, 68, 140, 140, 105, 74, 227, 243, 131, 185, 182, 157, 158, 209, 62 }
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Email = "kemal@petek.com",
                             FullName = "Mehmet Kemal Sarıkaya",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
+                            PasswordHash = new byte[] { 92, 40, 39, 169, 19, 183, 42, 201, 41, 151, 203, 221, 34, 254, 123, 200, 182, 5, 108, 217, 60, 40, 248, 52, 162, 30, 178, 228, 202, 182, 165, 117, 193, 234, 45, 178, 126, 15, 78, 84, 64, 230, 50, 123, 173, 122, 198, 91, 251, 36, 170, 228, 93, 1, 148, 165, 132, 74, 234, 227, 158, 72, 79, 162 },
+                            PasswordSalt = new byte[] { 194, 36, 130, 175, 23, 161, 32, 212, 221, 160, 137, 104, 167, 245, 71, 187, 73, 5, 50, 116, 18, 55, 1, 20, 119, 64, 127, 64, 191, 182, 249, 6, 210, 177, 14, 125, 13, 71, 144, 157, 42, 51, 199, 71, 147, 157, 207, 224, 76, 110, 235, 128, 213, 195, 171, 228, 229, 209, 18, 246, 190, 222, 235, 174, 209, 100, 202, 162, 24, 135, 190, 221, 210, 137, 129, 10, 15, 150, 178, 113, 48, 153, 81, 110, 76, 91, 230, 208, 195, 97, 218, 188, 212, 35, 237, 7, 110, 103, 205, 202, 73, 167, 105, 168, 172, 83, 42, 109, 65, 182, 210, 148, 247, 41, 68, 140, 140, 105, 74, 227, 243, 131, 185, 182, 157, 158, 209, 62 }
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Email = "samet@petek.com",
                             FullName = "Samet Dikmen",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
+                            PasswordHash = new byte[] { 92, 40, 39, 169, 19, 183, 42, 201, 41, 151, 203, 221, 34, 254, 123, 200, 182, 5, 108, 217, 60, 40, 248, 52, 162, 30, 178, 228, 202, 182, 165, 117, 193, 234, 45, 178, 126, 15, 78, 84, 64, 230, 50, 123, 173, 122, 198, 91, 251, 36, 170, 228, 93, 1, 148, 165, 132, 74, 234, 227, 158, 72, 79, 162 },
+                            PasswordSalt = new byte[] { 194, 36, 130, 175, 23, 161, 32, 212, 221, 160, 137, 104, 167, 245, 71, 187, 73, 5, 50, 116, 18, 55, 1, 20, 119, 64, 127, 64, 191, 182, 249, 6, 210, 177, 14, 125, 13, 71, 144, 157, 42, 51, 199, 71, 147, 157, 207, 224, 76, 110, 235, 128, 213, 195, 171, 228, 229, 209, 18, 246, 190, 222, 235, 174, 209, 100, 202, 162, 24, 135, 190, 221, 210, 137, 129, 10, 15, 150, 178, 113, 48, 153, 81, 110, 76, 91, 230, 208, 195, 97, 218, 188, 212, 35, 237, 7, 110, 103, 205, 202, 73, 167, 105, 168, 172, 83, 42, 109, 65, 182, 210, 148, 247, 41, 68, 140, 140, 105, 74, 227, 243, 131, 185, 182, 157, 158, 209, 62 }
                         });
                 });
 
@@ -160,130 +162,130 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 1,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-1",
                             SchoolId = 1,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 2,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-2",
                             SchoolId = 2,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 3,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-3",
                             SchoolId = 4,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 4,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-4",
                             SchoolId = 5,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 5,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-5",
                             SchoolId = 6,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 6,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-6",
                             SchoolId = 7,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 7,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-7",
                             SchoolId = 8,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 8,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-8",
                             SchoolId = 9,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 9,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-9",
                             SchoolId = 10,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         },
                         new
                         {
                             Id = 10,
                             Brand = "Pe-Tek",
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
-                            LastRepairDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            LastRepairDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             Number = "BUMATIK-10",
                             SchoolId = 11,
-                            StartDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129)
+                            StartDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459)
                         });
                 });
 
@@ -340,7 +342,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             AutomatItemInfoId = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -352,7 +354,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             AutomatItemInfoId = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -364,7 +366,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 3,
                             AutomatItemInfoId = 3,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -376,7 +378,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 4,
                             AutomatItemInfoId = 4,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -388,7 +390,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 5,
                             AutomatItemInfoId = 5,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -400,7 +402,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 6,
                             AutomatItemInfoId = 6,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -412,7 +414,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 7,
                             AutomatItemInfoId = 7,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             ImagePath = "../../../assets/img/automatItems/items-1.jpg",
                             IsDeleted = false,
@@ -456,7 +458,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -464,7 +466,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -472,7 +474,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 3,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -480,7 +482,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 4,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -488,7 +490,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 5,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -496,7 +498,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 6,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -504,7 +506,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 7,
                             Count = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         });
@@ -1008,7 +1010,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryName = "Adana",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1016,7 +1018,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             CountryName = "Adıyaman",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1024,7 +1026,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 3,
                             CountryName = "Afyon",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1032,7 +1034,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 4,
                             CountryName = "Ağrı",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1040,7 +1042,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 5,
                             CountryName = "Amasya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1048,7 +1050,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 6,
                             CountryName = "Ankara",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1056,7 +1058,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 7,
                             CountryName = "Antalya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1064,7 +1066,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 8,
                             CountryName = "Artvin",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1072,7 +1074,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 9,
                             CountryName = "Aydın",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1080,7 +1082,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 10,
                             CountryName = "Balıkesir",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1088,7 +1090,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 11,
                             CountryName = "Bilecik",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1096,7 +1098,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 12,
                             CountryName = "Bingöl",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1104,7 +1106,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 13,
                             CountryName = "Bitlis",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1112,7 +1114,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 14,
                             CountryName = "Bolu",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1120,7 +1122,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 15,
                             CountryName = "Burdur",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1128,7 +1130,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 16,
                             CountryName = "Bursa",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1136,7 +1138,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 17,
                             CountryName = "Çanakkale",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1144,7 +1146,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 18,
                             CountryName = "Çankırı",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1152,7 +1154,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 19,
                             CountryName = "Çorum",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1160,7 +1162,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 20,
                             CountryName = "Denizli",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1168,7 +1170,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 21,
                             CountryName = "Diyarbakır",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1176,7 +1178,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 22,
                             CountryName = "Edirne",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1184,7 +1186,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 23,
                             CountryName = "Elazığ",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1192,7 +1194,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 24,
                             CountryName = "Erzincan",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1200,7 +1202,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 25,
                             CountryName = "Erzurum",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1208,7 +1210,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 26,
                             CountryName = "Eskişehir",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1216,7 +1218,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 27,
                             CountryName = "Gaziantep",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1224,7 +1226,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 28,
                             CountryName = "Giresun",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1232,7 +1234,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 29,
                             CountryName = "Gümüşhane",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1240,7 +1242,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 30,
                             CountryName = "Hakkari",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1248,7 +1250,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 31,
                             CountryName = "Hatay",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1256,7 +1258,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 32,
                             CountryName = "Isparta",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1264,7 +1266,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 33,
                             CountryName = "İçel",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1272,7 +1274,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 34,
                             CountryName = "İstanbul",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1280,7 +1282,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 35,
                             CountryName = "İzmir",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1288,7 +1290,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 36,
                             CountryName = "Kars",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1296,7 +1298,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 37,
                             CountryName = "Kastamonu",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1304,7 +1306,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 38,
                             CountryName = "Kayseri",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1312,7 +1314,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 39,
                             CountryName = "Kırklareli",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1320,7 +1322,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 40,
                             CountryName = "Kırşehir",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1328,7 +1330,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 41,
                             CountryName = "Kocaeli",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1336,7 +1338,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 42,
                             CountryName = "Konya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1344,7 +1346,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 43,
                             CountryName = "Kütahya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1352,7 +1354,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 44,
                             CountryName = "Malatya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1360,7 +1362,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 45,
                             CountryName = "Manisa",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1368,7 +1370,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 46,
                             CountryName = "Kahramanmaraş",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1376,7 +1378,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 47,
                             CountryName = "Mardin",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1384,7 +1386,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 48,
                             CountryName = "Muğla",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1392,7 +1394,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 49,
                             CountryName = "Muş",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1400,7 +1402,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 50,
                             CountryName = "Nevşehir",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1408,7 +1410,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 51,
                             CountryName = "Niğde",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1416,7 +1418,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 52,
                             CountryName = "Ordu",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1424,7 +1426,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 53,
                             CountryName = "Rize",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1432,7 +1434,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 54,
                             CountryName = "Sakarya",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1440,7 +1442,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 55,
                             CountryName = "Samsun",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1448,7 +1450,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 56,
                             CountryName = "Siirt",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1456,7 +1458,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 57,
                             CountryName = "Sinop",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1464,7 +1466,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 58,
                             CountryName = "Sivas",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1472,7 +1474,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 59,
                             CountryName = "Tekirdağ",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1480,7 +1482,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 60,
                             CountryName = "Tokat",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1488,7 +1490,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 61,
                             CountryName = "Trabzon",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1496,7 +1498,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 62,
                             CountryName = "Tunceli",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1504,7 +1506,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 63,
                             CountryName = "Şanlıurfa",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1512,7 +1514,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 64,
                             CountryName = "Uşak",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1520,7 +1522,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 65,
                             CountryName = "Van",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1528,7 +1530,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 66,
                             CountryName = "Yozgat",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1536,7 +1538,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 67,
                             CountryName = "Zonguldak",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1544,7 +1546,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 68,
                             CountryName = "Aksaray",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1552,7 +1554,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 69,
                             CountryName = "Bayburt",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1560,7 +1562,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 70,
                             CountryName = "Karaman",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1568,7 +1570,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 71,
                             CountryName = "Kırıkkale",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1576,7 +1578,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 72,
                             CountryName = "Batman",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1584,7 +1586,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 73,
                             CountryName = "Şırnak",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1592,7 +1594,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 74,
                             CountryName = "Bartın",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1600,7 +1602,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 75,
                             CountryName = "Ardahan",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1608,7 +1610,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 76,
                             CountryName = "Iğdır",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1616,7 +1618,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 77,
                             CountryName = "Yalova",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1624,7 +1626,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 78,
                             CountryName = "Karabük",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1632,7 +1634,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 79,
                             CountryName = "Kilis",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1640,7 +1642,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 80,
                             CountryName = "Osmaniye",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         },
@@ -1648,7 +1650,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 81,
                             CountryName = "Düzce",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false
                         });
@@ -1690,7 +1692,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             Description = "",
                             IsDeleted = false,
@@ -1699,7 +1701,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             Description = "",
                             IsDeleted = false,
@@ -1708,7 +1710,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             Description = "",
                             IsDeleted = false,
@@ -1717,7 +1719,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             Description = "",
                             IsDeleted = false,
@@ -1765,7 +1767,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             MenuTypeId = 1,
@@ -1774,7 +1776,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             MenuTypeId = 2,
@@ -1824,7 +1826,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             FinishDate = new TimeSpan(0, 10, 0, 0, 0),
                             IsDeleted = false,
@@ -1834,7 +1836,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             FinishDate = new TimeSpan(0, 15, 0, 0, 0),
                             IsDeleted = false,
@@ -1881,7 +1883,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Admin"
@@ -1889,7 +1891,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Member"
@@ -1897,7 +1899,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Member.Create"
@@ -1905,7 +1907,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Student.Add"
@@ -1913,7 +1915,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Student.GetById"
@@ -1921,7 +1923,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Student.Delete"
@@ -1929,7 +1931,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Student.Update"
@@ -1937,7 +1939,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Parent.Add"
@@ -1945,7 +1947,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Parent.Delete"
@@ -1953,7 +1955,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Parent.Update"
@@ -1969,9 +1971,6 @@ namespace Petek.BUmatik.DataAccess.Migrations
 
                     b.Property<int?>("AdminUserId")
                         .HasColumnType("integer");
-
-                    b.Property<string>("Avatar")
-                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
@@ -2010,62 +2009,13 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Avatar = "avatar-s-1.jpg",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             Email = "ereninal10@gmail.com",
                             FullName = "Eren İNAL",
                             IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Avatar = "avatar-s-2.jpg",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            Email = "pelinsu.baltaci@petek.com",
-                            FullName = "Pelinsu Baltacı",
-                            IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Avatar = "avatar-s-1.jpg",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            Email = "eren.inal@petek.com",
-                            FullName = "Eren İnal",
-                            IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Avatar = "avatar-s-9.jpg",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            Email = "kemal.sarikaya@petek.com",
-                            FullName = "Mehmet Kemal Sarıkaya",
-                            IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Avatar = "avatar-s-4.jpg",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            Email = "samet.dikmen@petek.com",
-                            FullName = "Samet Dikmen",
-                            IsDeleted = false,
-                            PasswordHash = new byte[] { 251, 84, 184, 214, 12, 61, 178, 231, 171, 58, 31, 62, 2, 15, 126, 170, 151, 191, 204, 189, 31, 242, 10, 139, 34, 48, 168, 40, 199, 67, 126, 100, 180, 164, 255, 196, 66, 97, 179, 172, 229, 84, 169, 47, 170, 23, 108, 94, 168, 45, 229, 120, 107, 138, 7, 3, 143, 37, 188, 1, 65, 187, 91, 45 },
-                            PasswordSalt = new byte[] { 16, 93, 173, 135, 234, 229, 251, 170, 4, 17, 76, 145, 237, 65, 197, 228, 50, 5, 181, 17, 210, 231, 176, 245, 147, 133, 175, 164, 206, 202, 77, 206, 186, 87, 144, 116, 117, 233, 168, 232, 134, 3, 70, 155, 117, 116, 195, 175, 185, 61, 43, 194, 72, 123, 99, 87, 77, 177, 150, 82, 152, 200, 49, 92, 27, 129, 102, 104, 144, 185, 220, 213, 159, 125, 158, 118, 158, 139, 150, 96, 224, 181, 92, 221, 131, 30, 236, 207, 218, 223, 82, 204, 244, 173, 175, 86, 173, 180, 0, 202, 250, 121, 35, 138, 57, 180, 64, 53, 44, 30, 218, 203, 96, 56, 224, 6, 129, 117, 143, 244, 176, 248, 208, 220, 99, 206, 213, 119 }
+                            PasswordHash = new byte[] { 92, 40, 39, 169, 19, 183, 42, 201, 41, 151, 203, 221, 34, 254, 123, 200, 182, 5, 108, 217, 60, 40, 248, 52, 162, 30, 178, 228, 202, 182, 165, 117, 193, 234, 45, 178, 126, 15, 78, 84, 64, 230, 50, 123, 173, 122, 198, 91, 251, 36, 170, 228, 93, 1, 148, 165, 132, 74, 234, 227, 158, 72, 79, 162 },
+                            PasswordSalt = new byte[] { 194, 36, 130, 175, 23, 161, 32, 212, 221, 160, 137, 104, 167, 245, 71, 187, 73, 5, 50, 116, 18, 55, 1, 20, 119, 64, 127, 64, 191, 182, 249, 6, 210, 177, 14, 125, 13, 71, 144, 157, 42, 51, 199, 71, 147, 157, 207, 224, 76, 110, 235, 128, 213, 195, 171, 228, 229, 209, 18, 246, 190, 222, 235, 174, 209, 100, 202, 162, 24, 135, 190, 221, 210, 137, 129, 10, 15, 150, 178, 113, 48, 153, 81, 110, 76, 91, 230, 208, 195, 97, 218, 188, 212, 35, 237, 7, 110, 103, 205, 202, 73, 167, 105, 168, 172, 83, 42, 109, 65, 182, 210, 148, 247, 41, 68, 140, 140, 105, 74, 227, 243, 131, 185, 182, 157, 158, 209, 62 }
                         });
                 });
 
@@ -2122,7 +2072,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Selçuk Üniversitesi",
@@ -2132,7 +2082,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Beykent Üniversitesi",
@@ -2142,7 +2092,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 3,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Sabancı Üniversitesi",
@@ -2152,7 +2102,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 4,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Koç Üniversitesi",
@@ -2162,7 +2112,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 5,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Yıldız Teknik Üniversitesi",
@@ -2172,7 +2122,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 6,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "İstanbul Üniversitesi",
@@ -2182,7 +2132,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 7,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "İstanbul Teknik Üniversitesi",
@@ -2192,7 +2142,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 8,
                             CountryId = 61,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Karadeniz Teknik Üniversitesi",
@@ -2202,7 +2152,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 9,
                             CountryId = 35,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Ege Üniversitesi",
@@ -2212,7 +2162,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 10,
                             CountryId = 42,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Konya Teknik Üniversitesi",
@@ -2222,7 +2172,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 11,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Kocaeli Üniversitesi",
@@ -2232,7 +2182,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 12,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Gebze Teknik Üniversitesi",
@@ -2242,7 +2192,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 13,
                             CountryId = 67,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Fırat Üniversitesi",
@@ -2252,7 +2202,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 14,
                             CountryId = 59,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Namık Kemal Üniversitesi",
@@ -2262,7 +2212,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 15,
                             CountryId = 22,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Trakya Üniversitesi",
@@ -2272,7 +2222,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 16,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Ankara Üniversitesi",
@@ -2282,7 +2232,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 17,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Orta Doğu Teknik Üniversitesi",
@@ -2292,7 +2242,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 18,
                             CountryId = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Bilkent Üniversitesi",
@@ -2302,7 +2252,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 19,
                             CountryId = 17,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Çanakkale 18 Mart Üniversitesi",
@@ -2312,7 +2262,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 20,
                             CountryId = 32,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Süleyman Demirel Üniversitesi",
@@ -2322,7 +2272,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 21,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "İstanbul Aydın Üniversitesi",
@@ -2332,7 +2282,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 22,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Nişantaşı Üniversitesi",
@@ -2342,7 +2292,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 23,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Marmara Üniversitesi",
@@ -2352,7 +2302,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 24,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Boğaziçi Üniversitesi",
@@ -2362,7 +2312,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 25,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Gelişim Üniversitesi",
@@ -2372,7 +2322,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 26,
                             CountryId = 34,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             Name = "Milli Savunma Üniversitesi",
@@ -2439,7 +2389,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 1,
                             AutomatItemId = 1,
                             Count = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2453,7 +2403,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 2,
                             AutomatItemId = 2,
                             Count = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2467,7 +2417,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 3,
                             AutomatItemId = 3,
                             Count = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2481,7 +2431,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 4,
                             AutomatItemId = 7,
                             Count = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2495,7 +2445,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 5,
                             AutomatItemId = 2,
                             Count = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2509,7 +2459,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                             Id = 6,
                             AutomatItemId = 3,
                             Count = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             LastStatus = true,
@@ -2646,7 +2596,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 1,
                             BandNumber = "11111",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             FullName = "Mira İNAL",
                             IsDeleted = false,
@@ -2658,7 +2608,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         {
                             Id = 2,
                             BandNumber = "22222",
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             FullName = "Aras İNAL",
                             IsDeleted = false,
@@ -2709,7 +2659,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             IsDeleted = false,
                             SeledtedItem = "{'Elma','Portakal','Su' }",
                             Status = false,
@@ -2875,7 +2825,7 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             OperationClaimId = 1,
@@ -2884,83 +2834,11 @@ namespace Petek.BUmatik.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2021, 9, 18, 15, 22, 28, 689, DateTimeKind.Local).AddTicks(3459),
                             CreatedUserId = 1,
                             IsDeleted = false,
                             OperationClaimId = 2,
                             ParentId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 1,
-                            ParentId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 2,
-                            ParentId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 1,
-                            ParentId = 3
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 2,
-                            ParentId = 3
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 1,
-                            ParentId = 4
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 2,
-                            ParentId = 4
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 1,
-                            ParentId = 5
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CreatedDate = new DateTime(2021, 9, 18, 22, 4, 59, 106, DateTimeKind.Local).AddTicks(129),
-                            CreatedUserId = 1,
-                            IsDeleted = false,
-                            OperationClaimId = 2,
-                            ParentId = 5
                         });
                 });
 

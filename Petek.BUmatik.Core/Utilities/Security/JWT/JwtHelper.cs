@@ -38,7 +38,8 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
                 Expiration = _accessTokenExpiration,
                 Fullname = user.FullName,
                 ParentEmail = user.Email,
-                ParentId = user.Id
+                ParentId = user.Id,
+                Avatar = user.Avatar,
 
             };
 

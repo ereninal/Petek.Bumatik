@@ -13,5 +13,6 @@ namespace Petek.BUmatik.Core.Utilities.Security.JWT
         public int ParentId { get; set; }
         public string ParentEmail { get; set; }
         public string Fullname { get; set; }
+        public string Avatar { get; set; }
     }
 }

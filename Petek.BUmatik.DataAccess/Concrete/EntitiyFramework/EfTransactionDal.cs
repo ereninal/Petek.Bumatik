@@ -12,21 +12,23 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 {
     public class EfTransactionDal : EfEntityRepositoryBase<Transaction, BUmatikContext>, ITransactionDal
     {
-        public List<TransactionDataDTO> GetTransactionData(int parentId)
+        public TransactionDataDTO GetTransactionData(int parentId)
         {
             using (var context = new BUmatikContext())
             {
                 var studentIds = context.Students.Where(m => m.IsDeleted == false && m.ParentId == parentId).Select(m => m.Id).ToList();
-                var datas = new List<TransactionDataDTO>();
+                var datas = new TransactionDataDTO();
                 foreach (var item in studentIds)
                 {
-                    var dtoData = context.Transactions.Include(m => m.Student).Where(m => m.IsDeleted == false && m.StudentId == item).Select(m => new TransactionDataDTO()
+                    var dtoData = context.Transactions.Include(m => m.Student).Where(m => m.IsDeleted == false && m.StudentId == item).ToList();
+                    foreach (var itemStudent in dtoData)
                     {
-                        StudentName = m.Student.FullName,
-                        UseDate = m.CreatedDate
-                    }).ToList();
-                    datas.AddRange(dtoData);
 
+                        datas.ItemCount.Add(itemStudent.ItemCount);
+                        datas.StudentNames.Add(itemStudent.Student.FullName);
+                        datas.UseDates.Add(itemStudent.CreatedDate.Date);
+                        
+                    }
                 }
                 return datas;
             }

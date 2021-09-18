@@ -78,6 +78,14 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 new UserOperationClaim{Id=1,ParentId=1,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=1},
                 new UserOperationClaim{Id=2,ParentId=1,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=2},
+                new UserOperationClaim{Id=3,ParentId=2,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=1},
+                new UserOperationClaim{Id=4,ParentId=2,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=2},
+                new UserOperationClaim{Id=5,ParentId=3,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=1},
+                new UserOperationClaim{Id=6,ParentId=3,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=2},
+                new UserOperationClaim{Id=7,ParentId=4,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=1},
+                new UserOperationClaim{Id=8,ParentId=4,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=2},
+                new UserOperationClaim{Id=9,ParentId=5,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=1},
+                new UserOperationClaim{Id=10,ParentId=5,IsDeleted=false,CreatedDate=createdDate,CreatedUserId=1,OperationClaimId=2},
             };
             modelBuilder.Entity<UserOperationClaim>().HasData(userOperationClaims);
             #endregion
@@ -85,7 +93,11 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             #region Parents
             var parents = new Parent[]
             {
-                new Parent{Id=1,FullName="Eren İNAL",Email="ereninal10@gmail.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt }
+                new Parent{Id=1,FullName="Eren İNAL",Email="ereninal10@gmail.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt,Avatar="avatar-s-1.jpg" },
+                new Parent{Id=2,FullName="Pelinsu Baltacı",Email="pelinsu.baltaci@petek.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt,Avatar="avatar-s-2.jpg" },
+                new Parent{Id=3,FullName="Eren İnal",Email="eren.inal@petek.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt ,Avatar="avatar-s-1.jpg"},
+                new Parent{Id=4,FullName="Mehmet Kemal Sarıkaya",Email="kemal.sarikaya@petek.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt,Avatar="avatar-s-9.jpg" },
+                new Parent{Id=5,FullName="Samet Dikmen",Email="samet.dikmen@petek.com",CreatedUserId=1,CreatedDate=createdDate,IsDeleted=false,PasswordHash=passwordHash,PasswordSalt=passwordSalt,Avatar="avatar-s-4.jpg" },
             };
             modelBuilder.Entity<Parent>().HasData(parents);
             #endregion
@@ -341,7 +353,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             var menuType = new MenuType[]
             {
                 new MenuType{Id=1,Type="Sabah",StartDate= new TimeSpan(6,0,0),FinishDate=new TimeSpan(10,0,0),CreatedDate=createdDate,CreatedUserId =1,IsDeleted=false},
-                new MenuType{Id=2,Type="Öğle",StartDate= new TimeSpan(12,0,0),FinishDate=new TimeSpan(3,0,0),CreatedDate=createdDate,CreatedUserId =1,IsDeleted=false},
+                new MenuType{Id=2,Type="Öğle",StartDate= new TimeSpan(12,0,0),FinishDate=new TimeSpan(15,0,0),CreatedDate=createdDate,CreatedUserId =1,IsDeleted=false},
             };
             modelBuilder.Entity<MenuType>().HasData(menuType);
 
@@ -394,12 +406,12 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
             var transactions = new Transaction[]
             {
-                new Transaction{Id=1,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =1},
-                new Transaction{Id=2,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2},
-                new Transaction{Id=3,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=3,CreatedUserId =1,MenuTypeId =1},
-                new Transaction{Id=4,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=4,CreatedUserId =1,MenuTypeId =2},
-                new Transaction{Id=5,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =2},
-                new Transaction{Id=6,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2},
+                new Transaction{Id=1,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =1,ItemCount=3},
+                new Transaction{Id=2,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2,ItemCount=4},
+                new Transaction{Id=3,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=3,CreatedUserId =1,MenuTypeId =1,ItemCount=5},
+                new Transaction{Id=4,ParentId=1,CreatedDate = new DateTime(2021,06,25).Date,IsDeleted=false,StudentId=4,CreatedUserId =1,MenuTypeId =2,ItemCount=2},
+                new Transaction{Id=5,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=1,CreatedUserId =1,MenuTypeId =2,ItemCount=1},
+                new Transaction{Id=6,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2,ItemCount=5},
             };
             modelBuilder.Entity<Transaction>().HasData(transactions);
 
