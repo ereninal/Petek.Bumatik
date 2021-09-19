@@ -46,7 +46,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     PasswordHash = m.PasswordHash,
                     PasswordSalt = m.PasswordSalt,
                     Avatar = m.Avatar
-                    
+
                 }).ToList();
 
                 return datas;
@@ -70,7 +70,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
-        public SelectedMenuDetailsDTO GetStudentMenuDetails(int id,int menuTypeId,DateTime useDate)
+        public SelectedMenuDetailsDTO GetStudentMenuDetails(int id, int menuTypeId, DateTime useDate)
         {
 
             using (var context = new BUmatikContext())
@@ -118,7 +118,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.SelectedMenuItems.Include(s => s.Menu).Include(a => a.Student).Where(m => m.IsDeleted == false && m.StudentId == id).Select(m => new SelectedMenusDTO() 
+                var datas = context.SelectedMenuItems.Include(s => s.Menu).Include(a => a.Student).Where(m => m.IsDeleted == false && m.StudentId == id).Select(m => new SelectedMenusDTO()
                 {
                     StudentId = m.StudentId,
                     BandNumber = m.Student.BandNumber,
@@ -135,14 +135,14 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         {
             using (var context = new BUmatikContext())
             {
-                var datas = context.SelectedMenuItems.Select(m=> new { m.UseDate,m.StudentId,m.Menu,m.MenuId,m.IsDeleted,m.CreatedDate,m.LastStatus}).Where(m => m.IsDeleted == false && m.StudentId == id).GroupBy(m=> new { m.MenuId,m.UseDate,m.LastStatus}).Select(m => new StudentMenusDTO()
+                var datas = context.SelectedMenuItems.Select(m => new { m.UseDate, m.StudentId, m.Menu, m.MenuId, m.IsDeleted, m.CreatedDate, m.LastStatus }).Where(m => m.IsDeleted == false && m.StudentId == id).GroupBy(m => new { m.MenuId, m.UseDate, m.LastStatus }).Select(m => new StudentMenusDTO()
                 {
                     StudentId = id,
                     MenuTypeId = m.Key.MenuId,
                     MenuType = m.Key.MenuId == 1 ? "Sabah" : "Akşam",
                     UseDate = m.Key.UseDate.ToShortDateString(),
                     LastStatus = m.Key.LastStatus,
-                    CreatedDate = GetCreatedDateByMenu(id,m.Key.MenuId,m.Key.UseDate),
+                    CreatedDate = GetCreatedDateByMenu(id, m.Key.MenuId, m.Key.UseDate),
                     SelectedItemCount = m.Count()
 
                 }).ToList();
@@ -150,11 +150,11 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             }
         }
 
-        private static string GetCreatedDateByMenu(int studentId,int menuTypeId,DateTime useDate)
+        private static string GetCreatedDateByMenu(int studentId, int menuTypeId, DateTime useDate)
         {
             using (var context = new BUmatikContext())
             {
-                var createdDate = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId,m.StudentId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m=>m.CreatedDate).FirstOrDefault();
+                var createdDate = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId, m.StudentId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m => m.CreatedDate).FirstOrDefault();
                 return createdDate.ToShortDateString();
             }
         }
@@ -167,7 +167,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 var studentIds = context.Students.Where(m => m.IsDeleted == false && m.ParentId == parentId).Select(m => m.Id).ToList();
                 foreach (var item in studentIds)
                 {
-                    data += context.SelectedMenuItems.Select(m => new { m.UseDate, m.StudentId, m.Menu, m.MenuId, m.IsDeleted, m.CreatedDate,m.LastStatus }).Where(m => m.IsDeleted == false && m.StudentId == item && m.LastStatus == true).GroupBy(m => new { m.MenuId, m.UseDate }).Count();
+                    data += context.SelectedMenuItems.Select(m => new { m.UseDate, m.StudentId, m.Menu, m.MenuId, m.IsDeleted, m.CreatedDate, m.LastStatus }).Where(m => m.IsDeleted == false && m.StudentId == item && m.LastStatus == true).GroupBy(m => new { m.MenuId, m.UseDate }).Count();
 
                 }
                 return data;
@@ -187,6 +187,22 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 }
                 return data;
 
+            }
+        }
+
+        public void StudentMenuPackageAdd(SelectMenuPackageDTO selectMenuPackageDTO)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var newData = new SelectedMenuItems();
+                newData.LastStatus = true;
+                newData.StudentId = selectMenuPackageDTO.StudentId;
+                newData.MenuId = selectMenuPackageDTO.MenuTypeId;
+                newData.Count = selectMenuPackageDTO.Count;
+                newData.UseDate = selectMenuPackageDTO.UseDate.Date;
+                newData.AutomatItemId = selectMenuPackageDTO.PackageId;
+                context.SelectedMenuItems.Add(newData);
+                context.SaveChanges();
             }
         }
     }

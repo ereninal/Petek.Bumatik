@@ -51,6 +51,11 @@ namespace Petek.BUmatik.Business.Concrete
 
         }
 
+        public IDataResult<SelectedMenuPackageDTO> GetStudentMenuDetailsPackageByBandNumber(string bandNumber)
+        {
+            return new SuccessDataResult<SelectedMenuPackageDTO>(_automatDal.GetStudentMenuDetailsPackageByBandNumber(bandNumber), "Öğün bilgisi listelendi.");
+        }
+
         private IResult CheckIfStudentBandNumberExists(string bandNumber)
         {   
             var result = _studentDal.GetAll(p => p.BandNumber == bandNumber && p.IsDeleted == false).Any();

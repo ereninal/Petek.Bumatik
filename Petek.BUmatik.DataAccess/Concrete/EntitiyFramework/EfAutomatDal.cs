@@ -77,7 +77,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     menuTypeId = 2;
                 else if (useTime >= startMorningDate && useTime <= finishMorningDate)
                     menuTypeId = 1;
-                
+
 
                 var data = context.Students.Include(s => s.SelectedMenuItems).Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).Select(m => new SelectedMenuDetailsDTO()
                 {
@@ -86,7 +86,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     MenuItems = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == DateTime.Today && s.LastStatus == true).ToList()
 
                 }).FirstOrDefault();
-                if(data.MenuItems.Count > 0)
+                if (data.MenuItems.Count > 0)
                     MenuPassiveProcess(data);
                 return data;
             }
@@ -105,7 +105,26 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     var updatedEntity = context.Entry(item);
                     updatedEntity.State = EntityState.Modified;
                 }
-                
+
+                context.SaveChanges();
+            }
+            return false;
+        }
+        public bool MenuPassiveProcessPackage(SelectedMenuPackageDTO selectedMenuPackageDTO)
+        {
+
+            using (var context = new BUmatikContext())
+            {
+                var studentId = context.Students.FirstOrDefault(m => m.IsDeleted == false && m.BandNumber == selectedMenuPackageDTO.BandNumber).Id;
+                var updateData = context.SelectedMenuItems.Where(m => m.LastStatus == true && m.AutomatItemId == selectedMenuPackageDTO.PackageId && m.StudentId == selectedMenuPackageDTO.StudentId && m.UseDate == selectedMenuPackageDTO.UseDate);
+                foreach (var item in updateData)
+                {
+                    item.LastStatus = false;
+                    item.ModifiedDate = DateTime.Now;
+                    var updatedEntity = context.Entry(item);
+                    updatedEntity.State = EntityState.Modified;
+                }
+
                 context.SaveChanges();
             }
             return false;
@@ -116,6 +135,39 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 context.AutomatItems.Add(item);
                 context.SaveChanges();
+            }
+        }
+
+        public SelectedMenuPackageDTO GetStudentMenuDetailsPackageByBandNumber(string bandNumber)
+        {
+            var currentUseTime = DateTime.Now.AddSeconds(41200);
+            var useTime = new TimeSpan(currentUseTime.Hour, currentUseTime.Minute, currentUseTime.Second);
+            using (var context = new BUmatikContext())
+            {
+                var menuTypeId = 3;
+                var startMorningDate = context.MenuTypes.Where(m => m.Id == 1).Select(m => m.StartDate).FirstOrDefault();
+                var finishMorningDate = context.MenuTypes.Where(m => m.Id == 1).Select(m => m.FinishDate).FirstOrDefault();
+                var StartNoonDate = context.MenuTypes.Where(m => m.Id == 2).Select(m => m.StartDate).FirstOrDefault();
+                var finishNoonDate = context.MenuTypes.Where(m => m.Id == 2).Select(m => m.FinishDate).FirstOrDefault();
+                if (useTime >= StartNoonDate && useTime <= finishNoonDate)
+                    menuTypeId = 2;
+                else if (useTime >= startMorningDate && useTime <= finishMorningDate)
+                    menuTypeId = 1;
+
+                var lastUseDate = DateTime.Today.AddDays(1);
+                var data = context.Students.Include(s => s.SelectedMenuItems).Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).Select(m => new SelectedMenuPackageDTO()
+                {
+                    BandNumber = m.BandNumber,
+                    StudentName = m.FullName,
+                    StudentId = m.Id,
+                    UseDate = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == lastUseDate && s.LastStatus == true).FirstOrDefault().UseDate,
+                    PackageId = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == lastUseDate && s.LastStatus == true).FirstOrDefault().AutomatItemId,
+                    SelectedMenuId = m.SelectedMenuItems.Where(s => s.IsDeleted == false && s.StudentId == m.Id && s.MenuId == menuTypeId && s.UseDate == lastUseDate && s.LastStatus == true).FirstOrDefault().Id,
+
+                }).FirstOrDefault();
+                //if (data != null)
+                //    MenuPassiveProcessPackage(data);
+                return data;
             }
         }
     }

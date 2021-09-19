@@ -20,6 +20,7 @@ namespace Petek.BUmatik.Business.Abstract
         Parent GetByMail(string email);
         IResult AddStudentByParent(Student student);
         IResult AddSelectedMenuByStudent(SelectedMenuItemDTO selectedMenuItems);
+        IResult AddSelectedMenuPackageByStudent(SelectMenuPackageDTO selectMenuPackageDTO);
 
 
 

@@ -81,7 +81,7 @@ namespace Petek.BUmatik.API
 
             app.ConfigureCustomExceptionMiddleware();
 
-            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200", "https://petek-bumatik-fe.herokuapp.com").AllowAnyHeader());//Front-End gelen isteklere izin verdik.-Eren
+            app.UseCors(builder =>builder.WithOrigins("http://localhost:4200", "https://petek-bumatik-fe.herokuapp.com", "https://petek-bumatik-fe-v2.herokuapp.com").AllowAnyHeader());//Front-End gelen isteklere izin verdik.-Eren
 
             app.UseHttpsRedirection();
 

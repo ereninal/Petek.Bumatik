@@ -90,6 +90,16 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPost("AddSelectedPackageMenuByStudent")]
+        public IActionResult AddSelectedPackageMenuByStudent(SelectMenuPackageDTO selectMenuPackageDTO)
+        {
+            var result = _userService.AddSelectedMenuPackageByStudent(selectMenuPackageDTO);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpGet("GetAllSelectedMenusByStudent")]
         public IActionResult GetAllSelectedMenusByStudent(int id)
         {

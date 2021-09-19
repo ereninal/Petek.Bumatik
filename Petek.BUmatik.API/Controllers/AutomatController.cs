@@ -61,5 +61,15 @@ namespace Petek.BUmatik.API.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("GetStudentMenuPackageByBandNumber")]
+        public IActionResult GetStudentMenuPackageByBandNumber(string bandNumber)
+        {
+            var result = _automatService.GetStudentMenuDetailsPackageByBandNumber(bandNumber);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

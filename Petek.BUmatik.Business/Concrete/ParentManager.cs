@@ -106,5 +106,10 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessResult();
         }
 
+        public IResult AddSelectedMenuPackageByStudent(SelectMenuPackageDTO selectMenuPackageDTO)
+        {
+            _parentDal.StudentMenuPackageAdd(selectMenuPackageDTO);
+            return new SuccessResult(Messages.MenuAdd);
+        }
     }
 }
