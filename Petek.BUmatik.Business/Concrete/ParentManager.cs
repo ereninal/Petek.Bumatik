@@ -83,14 +83,14 @@ namespace Petek.BUmatik.Business.Concrete
             return new SuccessResult(Messages.MenuAdd);
         }
         //[SecuredOperation("Admin,Member")]
-        [CacheAspect]
+        //[CacheAspect]
         public IDataResult<List<SelectedMenusDTO>> GetSelectedMenusByStudent(int id)
         {
             return new SuccessDataResult<List<SelectedMenusDTO>>(_parentDal.GetSelectedMenusByStudent(id), "Öğrenciye ait tüm menüler detayları listelendi.");
 
         }
         //[SecuredOperation("Admin,Member")]
-        [CacheAspect]
+        //[CacheAspect]
         public IDataResult<List<StudentMenusDTO>> GetAllSelectedMenusByStudent(int id)
         {
             return new SuccessDataResult<List<StudentMenusDTO>>(_parentDal.GetAllSelectedMenusByStudent(id), "Öğrenciye ait tüm menüler detayları listelendi.");

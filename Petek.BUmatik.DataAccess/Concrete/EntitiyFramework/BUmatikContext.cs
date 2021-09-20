@@ -36,6 +36,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
         public DbSet<Menu> Menus{ get; set; }
         public DbSet<StudentMenu> StudentMenus{ get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<PackageType> PackageTypes { get; set; }
 
         #endregion
 
@@ -414,6 +415,33 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 new Transaction{Id=6,ParentId=1,CreatedDate = new DateTime(2021,06,26).Date,IsDeleted=false,StudentId=2,CreatedUserId =1,MenuTypeId =2,ItemCount=5},
             };
             modelBuilder.Entity<Transaction>().HasData(transactions);
+
+            #endregion
+
+            #region PackageTypes
+
+            var packageTypes = new PackageType[]
+            {
+                new PackageType{Id=1,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 1"},
+                new PackageType{Id=2,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 2"},
+                new PackageType{Id=3,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 3"},
+                new PackageType{Id=4,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 4"},
+                new PackageType{Id=5,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 5"},
+                new PackageType{Id=6,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 6"},
+                new PackageType{Id=7,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 7"},
+                new PackageType{Id=8,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 8"},
+                new PackageType{Id=9,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 9"},
+                new PackageType{Id=10,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 10"},
+                new PackageType{Id=11,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 11"},
+                new PackageType{Id=12,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 12"},
+                new PackageType{Id=13,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 13"},
+                new PackageType{Id=14,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 14"},
+                new PackageType{Id=15,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 15"},
+                new PackageType{Id=16,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 16"},
+                new PackageType{Id=17,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 17"},
+                new PackageType{Id=18,CreatedDate = createdDate,CreatedUserId=1,IsDeleted=false,PackageName="Menü 18"},
+            };
+            modelBuilder.Entity<PackageType>().HasData(packageTypes);
 
             #endregion
 

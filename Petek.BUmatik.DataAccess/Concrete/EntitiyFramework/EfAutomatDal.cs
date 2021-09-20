@@ -140,7 +140,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
 
         public SelectedMenuPackageDTO GetStudentMenuDetailsPackageByBandNumber(string bandNumber)
         {
-            var currentUseTime = DateTime.Now.AddSeconds(41200);
+            var currentUseTime = DateTime.Now;
             var useTime = new TimeSpan(currentUseTime.Hour, currentUseTime.Minute, currentUseTime.Second);
             using (var context = new BUmatikContext())
             {
@@ -154,7 +154,7 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                 else if (useTime >= startMorningDate && useTime <= finishMorningDate)
                     menuTypeId = 1;
 
-                var lastUseDate = DateTime.Today.AddDays(1);
+                var lastUseDate = DateTime.Today;
                 var data = context.Students.Include(s => s.SelectedMenuItems).Where(m => m.IsDeleted == false && m.BandNumber == bandNumber.Trim()).Select(m => new SelectedMenuPackageDTO()
                 {
                     BandNumber = m.BandNumber,

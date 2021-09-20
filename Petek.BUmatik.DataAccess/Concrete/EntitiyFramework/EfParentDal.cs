@@ -143,7 +143,8 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
                     UseDate = m.Key.UseDate.ToShortDateString(),
                     LastStatus = m.Key.LastStatus,
                     CreatedDate = GetCreatedDateByMenu(id, m.Key.MenuId, m.Key.UseDate),
-                    SelectedItemCount = m.Count()
+                    SelectedItemCount = m.Count(),
+                    PackageName = GetPackageName(id, m.Key.MenuId, m.Key.UseDate)
 
                 }).ToList();
                 return datas;
@@ -156,6 +157,15 @@ namespace Petek.BUmatik.DataAccess.Concrete.EntitiyFramework
             {
                 var createdDate = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId, m.StudentId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m => m.CreatedDate).FirstOrDefault();
                 return createdDate.ToShortDateString();
+            }
+        }
+        private static string GetPackageName(int studentId, int menuTypeId, DateTime useDate)
+        {
+            using (var context = new BUmatikContext())
+            {
+                var packageID = context.SelectedMenuItems.Select(m => new { m.CreatedDate, m.IsDeleted, m.UseDate, m.MenuId, m.StudentId,m.AutomatItemId }).Where(m => m.IsDeleted == false && m.StudentId == studentId && m.MenuId == menuTypeId && m.UseDate == useDate).Select(m => m.AutomatItemId).FirstOrDefault();
+                var packageName = context.PackageTypes.Where(m => m.IsDeleted == false).FirstOrDefault().PackageName;
+                return packageName;
             }
         }
 

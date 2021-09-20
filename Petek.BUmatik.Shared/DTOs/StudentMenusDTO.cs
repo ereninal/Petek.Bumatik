@@ -10,6 +10,7 @@ namespace Petek.BUmatik.Shared.DTOs
         public string MenuType { get; set; }
         public int MenuTypeId { get; set; }
         public string UseDate { get; set; }
+        public string PackageName { get; set; }
         public string CreatedDate { get; set; }
         public bool LastStatus { get; set; }
         public int SelectedItemCount { get; set; }
